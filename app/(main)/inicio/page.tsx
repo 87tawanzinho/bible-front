@@ -1,32 +1,25 @@
 import React from "react";
+import CardsHome from "./cards";
+import { FaChevronDown, FaSortDown } from "react-icons/fa";
+import Title_and_arrowDown from "../components/title_and_arrowDown";
+import { BsArrowDown } from "react-icons/bs";
+import Card_with_citation_square from "../components/card_with_citation_square";
 
 function page() {
   return (
     <div className="">
-      <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
-        <div>
-          <p className="mb-2">Devocional</p>
-          <div className="h-60 md:h-80  lg:h-96 w-28 md:w-40 lg:w-48 bg-[#98a8b8] rounded-xl scale"></div>
-        </div>
+      <Title_and_arrowDown
+        title="O que você quer ver"
+        span="hoje?"
+        underline={true}
+      />
 
-        <div>
-          <p className="mb-2">Devocional</p>
-          <div className="h-60 md:h-80  lg:h-96 w-28 md:w-40 lg:w-48 bg-[#70886e] rounded-xl"></div>
-        </div>
+      <CardsHome />
 
-        <div>
-          <p className="mb-2">Devocional</p>
-          <div className="h-60 md:h-80  lg:h-96 w-28 md:w-40 lg:w-48 bg-[#81705c] rounded-xl"></div>
-        </div>
-
-        <div>
-          <p className="mb-2">Devocional</p>
-          <div className="h-60 md:h-80  lg:h-96 w-28 md:w-40 lg:w-48 bg-[#7a5a61] rounded-xl"></div>
-        </div>
-      </div>
+      <Card_with_citation_square />
 
       <div className="mt-10 text-xl">
-        <h2>Anotações</h2>
+        <Title_and_arrowDown title="Anotações" span="" underline={false} />
       </div>
     </div>
   );

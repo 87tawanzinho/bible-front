@@ -30,7 +30,7 @@ function Navbar() {
         />
 
         {openMenu && (
-          <div className="absolute top-12 bg-blue-50 text-black end-0 w-48 text-center">
+          <div className="absolute top-12 bg-blue-50 text-black end-0 p-2 w-48 text-center">
             <p>Passaró</p>
             <p>Passaró</p>
             <p>Passaró</p>
