@@ -38,6 +38,7 @@ body {
   transform: scale(1.1);
   transition: 0.1s ease-in;
   margin-top: 24px;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {
