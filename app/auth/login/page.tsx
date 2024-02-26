@@ -14,10 +14,13 @@ function page() {
   const axiosResponse = async () => {
     setWarning("se conectando...");
     try {
-      const response = await axios.post("http://localhost:8000/login", {
-        username: name,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://bible-back.onrender.com/login",
+        {
+          username: name,
+          password: password,
+        }
+      );
       const token = `Token ${response.data.token}`;
       localStorage.setItem("token", token);
       setWarning("😊");

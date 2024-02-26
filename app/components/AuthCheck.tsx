@@ -11,11 +11,14 @@ function AuthCheck({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/test_token", {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        });
+        const response = await axios.get(
+          "https://bible-back.onrender.com/test_token",
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
+          }
+        );
         setIsLogged(true);
       } catch (error) {
         setIsLogged(false);
