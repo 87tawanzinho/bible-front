@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function CardsHome() {
@@ -12,8 +14,14 @@ function CardsHome() {
 }
 
 function OneCard({ bg }: { bg: string }) {
+  const router = useRouter();
   return (
-    <div className="lg:overflow-hidden  ">
+    <div
+      className="lg:overflow-hidden  "
+      onClick={() => {
+        router.push("/devocional");
+      }}
+    >
       <p className="mb-2">Devocional</p>
       <div
         className={`h-60 md:h-80  lg:h-96 w-28 md:w-40 lg:w-48 ${bg} rounded-xl scale`}
