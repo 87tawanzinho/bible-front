@@ -8,12 +8,6 @@ import Card_with_citation_square from "../components/card_with_citation_square";
 function page() {
   return (
     <div className="">
-      <Title_and_arrowDown
-        title="O que você quer ver"
-        span="hoje?"
-        underline={true}
-      />
-
       <CardsHome />
 
       <Card_with_citation_square />
