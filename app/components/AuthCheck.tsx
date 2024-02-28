@@ -30,13 +30,7 @@ function AuthCheck({ children }: { children: React.ReactNode }) {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <Loading />
-      ) : IsLogged ? (
-        children
-      ) : (
-        router.push("/auth/login")
-      )}
+      {isLoading ? children : IsLogged ? children : router.push("/auth/login")}
     </>
   );
 }
