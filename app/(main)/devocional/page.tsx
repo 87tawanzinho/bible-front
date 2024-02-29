@@ -29,16 +29,11 @@ function page() {
 
     Lembre-se, Jesus é como um grande amigo que está sempre por perto, mesmo quando não conseguimos vê-Lo. Ele te ama muito!
   `);
-
   const [isAudio, setIsAudio] = useState(false);
 
   const handleSpeak = () => {
-    const synth = window.speechSynthesis;
     setIsAudio(true);
-
-    if (synth.speaking) {
-      synth.cancel();
-    }
+    const synth = window.speechSynthesis;
 
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.lang = "pt-BR";
@@ -56,18 +51,8 @@ function page() {
           <h2 className="text-center font-bold text-xl  text-orange-600 font-serif relative">
             Jesus, o seu melhor amigo!
           </h2>
-          {isAudio ? (
-            <Image src={audio} alt="audio" onClick={handleSpeak} />
-          ) : (
-            <Image
-              src={audio}
-              alt="audio"
-              onClick={() => {
-                synth.cancel();
-                setIsAudio(false);
-              }}
-            />
-          )}
+
+          <Image src={audio} alt="audio" onClick={handleSpeak} />
         </div>
 
         <div className="flex  justify-center">
