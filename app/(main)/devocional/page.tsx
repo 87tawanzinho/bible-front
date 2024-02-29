@@ -8,7 +8,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import Link from "next/link";
 function page() {
   return (
-    <div className="flex flex-col justify-center items-center  border-b-4 relative sm:border-4 shadow-lg border-sky-800 p-4">
+    <div className="flex flex-col justify-center items-center  border-b-4 relative sm:border-4 shadow-lg border-zinc-950 p-4">
       <div className="flex flex-col justify-center items-center gap-4">
         <p className="text-center text-2xl font-serif  ">Tempo com Jesus</p>
 
@@ -21,7 +21,7 @@ function page() {
         <Image src={jesusOpenArms} alt="jesus" height={40} />
       </div>
       <div className="mt-10 font-bold text-sm w-full flex justify-center">
-        <p className="mt-4   text-[13x] lg:text-sm w-auto  bg-sky-950 lg:w-96 text-gray-200 rounded-xl p-4">
+        <p className="mt-4   text-[13x] lg:text-sm w-auto  bg-zinc-950 lg:w-96 text-gray-300 rounded-xl p-4">
           Ter um tempo com Jesus é como ter um amigo especial. É falar com Ele,
           agradecer, pedir ajuda e ler histórias da Bíblia para aprender coisas
           boas. É se sentir feliz e protegido, sabendo que Jesus está sempre por
