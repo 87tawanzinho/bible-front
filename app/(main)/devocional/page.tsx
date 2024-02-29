@@ -45,57 +45,85 @@ function page() {
   };
 
   return (
-    <div className="text-black  px-8 text-sm">
-      <div>
-        <div className="flex items-center gap-4 mb-4">
-          <h2 className="text-center font-bold text-xl  text-orange-600 font-serif relative">
-            Jesus, o seu melhor amigo!
-          </h2>
-
-          <Image src={audio} alt="audio" onClick={handleSpeak} />
-        </div>
-
+    <div className="text-black  px-4 text-sm flex flex-col justify-center items-center">
+      <div className="mx-0  lg:mx-0 xl:mx-52 lg:border   p-4">
         <div className="flex  justify-center">
           <Image src={jesus} alt="jesus" className="h-8 w-8" />
           <Image src={sheep} alt="sheep" className="h-6 w-6 mt-2" />
         </div>
 
-        <p className="mt-10">
+        <p className="mt-10 text-center">
           Para se tornar amigo(a) de Jesus, você pode fazer algumas coisas
           simples:
         </p>
 
-        <div className="mt-10 flex flex-col gap-8 ">
-          <p>
-            {" "}
-            1:Converse com Ele: Fale com Jesus como se fosse um amigo. Conte
-            para Ele sobre o seu dia, suas alegrias e até mesmo as coisas que te
-            deixam triste. Ele sempre estará ouvindo!
-          </p>
-          <p>
-            2:Agradeça: Diga "obrigada" a Jesus por coisas boas que acontecem na
-            sua vida, como brincar com amigos, ter uma família carinhosa, ou até
-            mesmo por um dia bonito.
-          </p>
+        <div className="mt-10 flex flex-col gap-4 ">
+          <div className="relative bg-yellow-100 p-4 rounded-xl">
+            <p>
+              {" "}
+              1:Converse com Ele: Fale com Jesus como se fosse um amigo. Conte
+              para Ele sobre o seu dia, suas alegrias e até mesmo as coisas que
+              te deixam triste. Ele sempre estará ouvindo!
+            </p>
+            <Image
+              src={audio}
+              alt="audio"
+              className="absolute end-2 bottom-2"
+            />
+          </div>
 
-          <p>
-            3:Peça Ajuda: Se precisar de ajuda ou se sentir triste, você pode
-            pedir para Jesus te ajudar. Ele sempre está pronto para cuidar de
-            você.
-          </p>
+          <div className="bg-emerald-100 p-4 rounded-xl relative">
+            <p>
+              2:Agradeça: Diga "obrigada(o)" a Jesus por coisas boas que
+              acontecem na sua vida, como brincar com amigos, ter uma família
+              carinhosa, ou até mesmo por um dia bonito.
+            </p>
+            <Image
+              src={audio}
+              alt="audio"
+              className="absolute end-2 bottom-2"
+            />
+          </div>
 
-          <p>
-            4:Cante Músicas Felizes: Você pode cantar músicas alegres sobre
-            Jesus. Isso faz com que Ele sinta o quanto você O ama.
-          </p>
+          <div className="relative bg-sky-100 p-4 rounded-xl">
+            <p>
+              3:Peça Ajuda: Se precisar de ajuda ou se sentir triste, você pode
+              pedir para Jesus te ajudar. Ele sempre está pronto para cuidar de
+              você.
+            </p>
+            <Image
+              src={audio}
+              alt="audio"
+              className="absolute end-2 bottom-2"
+            />
+          </div>
 
-          <p>
-            5:Leia Histórias da Bíblia: Pergunte aos seus pais ou responsáveis
-            para ler histórias da Bíblia com você. Assim, você vai conhecendo
-            mais sobre Jesus e os amigos especiais que Ele teve.
-          </p>
+          <div className="bg-purple-100 p-4 rounded-xl relative">
+            <p className="bg-purple-100 p-4 rounded-xl">
+              4:Cante Músicas Felizes: Você pode cantar músicas alegres sobre
+              Jesus. Isso faz com que Ele sinta o quanto você O ama.
+            </p>
+            <Image
+              src={audio}
+              alt="audio"
+              className="absolute end-2 bottom-2"
+            />
+          </div>
 
-          <p>
+          <div className="bg-pink-100 p-4 rounded-xl relative">
+            <p>
+              5:Leia Histórias da Bíblia: Pergunte aos seus pais ou responsáveis
+              para ler histórias da Bíblia com você. Assim, você vai conhecendo
+              mais sobre Jesus e os amigos especiais que Ele teve.
+            </p>
+            <Image
+              src={audio}
+              alt="audio"
+              className="absolute end-2 bottom-2"
+            />
+          </div>
+
+          <p className="">
             Lembre-se, Jesus é como um grande amigo que está sempre por perto,
             mesmo quando não conseguimos vê-Lo. Ele te ama muito!
           </p>

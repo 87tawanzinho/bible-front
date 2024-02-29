@@ -15,7 +15,7 @@ function CardsHome() {
         img={jesusAndClouds}
         title="Me tornando amigo de Jesus
         "
-        optionalClassForText="text-[14px]"
+        optionalClassForText="text-[12px]"
       />
       <OneCard
         bg="bg-orange-100"
