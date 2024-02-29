@@ -5,6 +5,7 @@
 body {
   box-sizing: border-box;
   color: #4b4b4b;
+  background: #fdfcfc;
 }
 .text-gray {
   color: rgb(27, 27, 27);

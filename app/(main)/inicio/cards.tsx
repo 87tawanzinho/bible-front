@@ -6,29 +6,79 @@ import jesusAndClouds from "@/public/Jesus/JesusAndClouds.png";
 import camel from "@/public/Jesus/Camel.png";
 import jesusAndSheep from "@/public/Jesus/JesusAndSheep.png";
 import jesusAndBeach from "@/public/Jesus/JesusAndBeach.png";
+import { MdArrowRightAlt } from "react-icons/md";
 function CardsHome() {
   return (
     <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
-      <OneCard bg="bg-blue-100" img={jesusAndClouds} title="Historinhas" />
-      <OneCard bg="bg-orange-100" img={jesusAndBeach} title="Quadrinhos" />
-      <OneCard bg="bg-green-100" img={jesusAndSheep} title="Ensinamentos" />
-      <OneCard bg="bg-red-100" img={camel} title="Cristo" />
+      <OneCard
+        bg="bg-blue-100"
+        img={jesusAndClouds}
+        title="Tempinho com Deus"
+        optionalClassForText="text-[14px]"
+      />
+      <OneCard
+        bg="bg-orange-100"
+        img={jesusAndBeach}
+        title="Quadrinhos de Jesus"
+        optionalClassForText="text-[14px]"
+      />
+      <OneCard
+        bg="bg-green-100"
+        img={jesusAndSheep}
+        title="Ensinamentos sobre Cristo"
+        optionalClassForText="text-[14px]"
+      />
+      <OneCard
+        bg="bg-red-100"
+        img={camel}
+        title="Cristo e Jesus rei das"
+        optionalClassForText="text-[14px]"
+      />
     </div>
   );
 }
 
-function OneCard({ bg, img, title }: { bg: string; img: any; title: string }) {
+export function OneCard({
+  bg,
+  img,
+  title,
+  optionalClassForDiv,
+  optionalClassForText,
+  optionalClassForDivImage,
+  optionalClassForImage,
+  buttonGo,
+}: {
+  bg: string;
+  img: any;
+  title: string;
+  optionalClassForDiv?: string;
+  optionalClassForText?: string;
+  optionalClassForDivImage?: string;
+  optionalClassForImage?: string;
+  buttonGo?: boolean;
+}) {
   const router = useRouter();
   return (
     <div
-      className="lg:overflow-hidden  "
+      className={`lg:overflow-hidden  ${optionalClassForDiv} `}
       onClick={() => {
         router.push("/devocional");
       }}
     >
-      <p className="mb-2 text-sm">{title}</p>
-      <div className={` w-28 md:w-40 lg:w-48 ${bg} rounded-xl scale`}>
-        <Image src={img} alt="img" className="rounded-xl" />
+      <p className={`mb-2  text-black ${optionalClassForText}`}>{title}</p>
+      <div
+        className={` w-28 md:w-40 lg:w-48 ${bg} rounded-xl  ${optionalClassForDivImage}`}
+      >
+        <Image
+          src={img}
+          alt="img"
+          className={`rounded-xl ${optionalClassForImage}`}
+        />
+        {buttonGo && (
+          <button className="bg-sky-800  text-white  px-4  mt-2 rounded text-sm">
+            <MdArrowRightAlt size={24} />
+          </button>
+        )}
       </div>
     </div>
   );

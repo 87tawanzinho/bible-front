@@ -2,15 +2,47 @@ import React from "react";
 import { GiVanillaFlower } from "react-icons/gi";
 import Animations from "../components/animations";
 import arc from "@/public/arc.json";
+import jesusKiss from "@/public/Jesus/JesusKiss.png";
+import jesusWord from "@/public/Jesus/jesusWord.png";
+import jesusOpenArms from "@/public/JesusIcons/jesusOpenArms.png";
+import { OneCard } from "../inicio/cards";
+import Image from "next/image";
 function page() {
   return (
     <div>
-      <p className="text-center text-2xl font-serif  ">Devocional</p>
-      <div className="flex items-center gap-4 justify-center">
-        <GiVanillaFlower size={34} className="text-sky-900" />
+      <div className="flex flex-col justify-center items-center gap-4">
+        <p className="text-center text-2xl font-serif  ">Tempo com Jesus</p>
+        <Image src={jesusOpenArms} alt="jesus" height={40} />
+      </div>
+      <div className="mt-10 font-bold text-sm">
+        <p className="mt-4   text-[13x] lg:text-sm w-auto lg:w-7/12">
+          Ter um tempo com Jesus é como ter um amigo especial. É falar com Ele,
+          agradecer, pedir ajuda e ler histórias da Bíblia para aprender coisas
+          boas. É se sentir feliz e protegido, sabendo que Jesus está sempre por
+          perto.
+        </p>
+      </div>
 
-        <Animations gif={arc} height="200px" width="200px" />
-        <GiVanillaFlower size={34} className="text-sky-900" />
+      <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center mt-10 justify-center lg:justify-normal">
+        <OneCard
+          title="Ser Amigo"
+          img={jesusKiss}
+          bg=""
+          optionalClassForText=" text-sm text-center"
+          optionalClassForDiv=" "
+          optionalClassForDivImage=""
+          buttonGo={true}
+        />
+
+        <OneCard
+          title="Conhecer"
+          img={jesusWord}
+          bg=""
+          optionalClassForText=" text-sm text-center"
+          optionalClassForDiv=" "
+          optionalClassForDivImage=""
+          buttonGo={true}
+        />
       </div>
     </div>
   );
