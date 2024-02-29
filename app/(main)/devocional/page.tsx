@@ -1,10 +1,7 @@
 import React from "react";
-import { GiVanillaFlower } from "react-icons/gi";
-import Animations from "../components/animations";
-import arc from "@/public/arc.json";
 import jesusKiss from "@/public/Jesus/JesusKiss.png";
 import jesusWord from "@/public/Jesus/jesusWord.png";
-import jesusOpenArms from "@/public/JesusIcons/jesusOpenArms.png";
+import jesusOpenArms from "@/public/JesusIcons/JesusOpenArms.png";
 import { OneCard } from "../inicio/cards";
 import Image from "next/image";
 function page() {
@@ -35,7 +32,7 @@ function page() {
         />
 
         <OneCard
-          title="Conhecer"
+          title="Oração"
           img={jesusWord}
           bg=""
           optionalClassForText=" text-sm text-center"
