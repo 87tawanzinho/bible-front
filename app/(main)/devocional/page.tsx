@@ -46,7 +46,7 @@ function page() {
 
   return (
     <div className="text-black  px-4 text-sm flex flex-col justify-center items-center">
-      <div className="mx-0  lg:mx-0 xl:mx-52 lg:border   p-4">
+      <div className="mx-0  lg:mx-0 xl:mx-52 lg:border-x-2   p-4 lg:p-8">
         <div className="flex  justify-center">
           <Image src={jesus} alt="jesus" className="h-8 w-8" />
           <Image src={sheep} alt="sheep" className="h-6 w-6 mt-2" />
