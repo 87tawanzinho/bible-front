@@ -8,20 +8,22 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import Link from "next/link";
 function page() {
   return (
-    <div className="flex flex-col justify-center items-center  border-b-4 relative sm:border-4 shadow-lg border-zinc-950 p-4">
+    <div className="flex flex-col justify-center items-center   relative sm:border-4 shadow-lg  p-2">
       <div className="flex flex-col justify-center items-center gap-4">
-        <p className="text-center text-2xl font-serif  ">Tempo com Jesus</p>
+        <p className="text-center text-2xl font-serif underline  ">
+          Tempo com Jesus
+        </p>
 
         <Link href={"/inicio"}>
-          <button className="absolute end-4 top-2  text-black">
-            <FaArrowCircleLeft size={20} />
+          <button className="absolute end-4 top-2  text-zinc-800">
+            <FaArrowCircleLeft size={18} />
           </button>
         </Link>
 
         <Image src={jesusOpenArms} alt="jesus" height={40} />
       </div>
       <div className="mt-10 font-bold text-sm w-full flex justify-center">
-        <p className="mt-4   text-[13x] lg:text-sm w-auto  bg-zinc-950 lg:w-96 text-gray-300 rounded-xl p-4">
+        <p className="mt-4   text-[13x] lg:text-sm w-auto  bg-sky-950 lg:w-96 text-gray-200 rounded-xl p-4">
           Ter um tempo com Jesus é como ter um amigo especial. É falar com Ele,
           agradecer, pedir ajuda e ler histórias da Bíblia para aprender coisas
           boas. É se sentir feliz e protegido, sabendo que Jesus está sempre por
@@ -31,20 +33,20 @@ function page() {
 
       <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center mt-10 justify-center lg:justify-normal">
         <OneCard
-          title="Ser Amigo"
+          title="Me tornando amigo de Jesus"
           img={jesusKiss}
           bg=""
-          optionalClassForText=" text-sm text-center"
+          optionalClassForText=" text-sm text-center w-32 lg:w-auto"
           optionalClassForDiv=" "
           optionalClassForDivImage=""
           buttonGo={true}
         />
 
         <OneCard
-          title="Oração"
+          title="Conhecendo a palavra de Deus"
           img={jesusWord}
           bg=""
-          optionalClassForText=" text-sm text-center"
+          optionalClassForText=" text-sm text-center w-32 lg:w-auto"
           optionalClassForDiv=" "
           optionalClassForDivImage=""
           buttonGo={true}
