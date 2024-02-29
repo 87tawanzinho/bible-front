@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import jesusKiss from "@/public/Jesus/JesusKiss.png";
 import jesusWord from "@/public/Jesus/jesusWord.png";
 import jesusOpenArms from "@/public/JesusIcons/JesusOpenArms.png";
@@ -6,51 +7,96 @@ import { OneCard } from "../inicio/cards";
 import Image from "next/image";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import Link from "next/link";
+import jesus from "@/public/JesusIcons/jesus.png";
+import sheep from "@/public/JesusIcons/sheep.png";
+import { MdAudiotrack } from "react-icons/md";
 function page() {
+  const [textToSpeak, setTextToSpeak] = useState(`
+    Jesus, o seu melhor amigo!
+
+    Para se tornar amigo(a) de Jesus, você pode fazer algumas coisas simples:
+
+    1. Converse com Ele: Fale com Jesus como se fosse um amigo. Diga para Ele sobre o seu dia, suas alegrias e até mesmo as coisas que te deixam triste. Ele sempre estará ouvindo!
+
+    2. Agradeça: Diga "obrigada" a Jesus por coisas boas que acontecem na sua vida, como brincar com amigos, ter uma família carinhosa, ou até mesmo por um dia bonito.
+
+    3. Peça Ajuda: Se precisar de ajuda ou se sentir triste, você pode pedir para Jesus te ajudar. Ele sempre está pronto para cuidar de você.
+
+    4. Cante Músicas Felizes: Você pode cantar músicas alegres sobre Jesus. Isso faz com que Ele sinta o quanto você O ama.
+
+    5. Leia Histórias da Bíblia: Pergunte aos seus pais ou responsáveis para ler histórias da Bíblia com você. Assim, você vai conhecendo mais sobre Jesus e os amigos especiais que Ele teve.
+
+    Lembre-se, Jesus é como um grande amigo que está sempre por perto, mesmo quando não conseguimos vê-Lo. Ele te ama muito!
+  `);
+
+  const handleSpeak = () => {
+    const synth = window.speechSynthesis;
+
+    if (synth.speaking) {
+      synth.cancel();
+    }
+
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+    utterance.lang = "pt-BR";
+    synth.speak(utterance);
+  };
+
   return (
-    <div className="flex flex-col justify-center items-center   relative sm:border-4 shadow-lg  p-2">
-      <div className="flex flex-col justify-center items-center gap-4">
-        <p className="text-center text-2xl font-serif underline  ">
-          Tempo com Jesus
+    <div className="text-black  px-8 text-sm">
+      <div>
+        <MdAudiotrack
+          size={24}
+          className="absolute end-4"
+          onClick={handleSpeak}
+        />
+        <h2 className="text-center font-bold text-xl mb-4 text-orange-600 font-serif">
+          Jesus, o seu melhor amigo!
+        </h2>
+        <div className="flex  justify-center">
+          <Image src={jesus} alt="jesus" className="h-8 w-8" />
+          <Image src={sheep} alt="sheep" className="h-6 w-6 mt-2" />
+        </div>
+
+        <p className="mt-10">
+          Para se tornar amigo(a) de Jesus, você pode fazer algumas coisas
+          simples:
         </p>
 
-        <Link href={"/inicio"}>
-          <button className="absolute end-4 top-2  text-zinc-800">
-            <FaArrowCircleLeft size={18} />
-          </button>
-        </Link>
+        <div className="mt-10 flex flex-col gap-8 ">
+          <p>
+            {" "}
+            1:Converse com Ele: Fale com Jesus como se fosse um amigo. Conte
+            para Ele sobre o seu dia, suas alegrias e até mesmo as coisas que te
+            deixam triste. Ele sempre estará ouvindo!
+          </p>
+          <p>
+            2:Agradeça: Diga "obrigada" a Jesus por coisas boas que acontecem na
+            sua vida, como brincar com amigos, ter uma família carinhosa, ou até
+            mesmo por um dia bonito.
+          </p>
 
-        <Image src={jesusOpenArms} alt="jesus" height={40} />
-      </div>
-      <div className="mt-10 font-bold text-sm w-full flex justify-center">
-        <p className="mt-4   text-[13x] lg:text-sm w-auto  bg-sky-950 lg:w-96 text-gray-200 rounded-xl p-4">
-          Ter um tempo com Jesus é como ter um amigo especial. É falar com Ele,
-          agradecer, pedir ajuda e ler histórias da Bíblia para aprender coisas
-          boas. É se sentir feliz e protegido, sabendo que Jesus está sempre por
-          perto.
-        </p>
-      </div>
+          <p>
+            3:Peça Ajuda: Se precisar de ajuda ou se sentir triste, você pode
+            pedir para Jesus te ajudar. Ele sempre está pronto para cuidar de
+            você.
+          </p>
 
-      <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center mt-10 justify-center lg:justify-normal">
-        <OneCard
-          title="Me tornando amigo de Jesus"
-          img={jesusKiss}
-          bg=""
-          optionalClassForText=" text-sm text-center w-32 lg:w-auto"
-          optionalClassForDiv=" "
-          optionalClassForDivImage=""
-          buttonGo={true}
-        />
+          <p>
+            4:Cante Músicas Felizes: Você pode cantar músicas alegres sobre
+            Jesus. Isso faz com que Ele sinta o quanto você O ama.
+          </p>
 
-        <OneCard
-          title="Conhecendo a palavra de Deus"
-          img={jesusWord}
-          bg=""
-          optionalClassForText=" text-sm text-center w-32 lg:w-auto"
-          optionalClassForDiv=" "
-          optionalClassForDivImage=""
-          buttonGo={true}
-        />
+          <p>
+            5:Leia Histórias da Bíblia: Pergunte aos seus pais ou responsáveis
+            para ler histórias da Bíblia com você. Assim, você vai conhecendo
+            mais sobre Jesus e os amigos especiais que Ele teve.
+          </p>
+
+          <p>
+            Lembre-se, Jesus é como um grande amigo que está sempre por perto,
+            mesmo quando não conseguimos vê-Lo. Ele te ama muito!
+          </p>
+        </div>
       </div>
     </div>
   );

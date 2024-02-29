@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Open_Sans, Poppins } from "next/font/google";
+import {
+  Aclonica,
+  Inter,
+  Open_Sans,
+  Poppins,
+  Tsukimi_Rounded,
+  Zilla_Slab,
+} from "next/font/google";
 import "./globals.css";
 
-const inter = Open_Sans({ subsets: ["latin"], weight: ["400", "500", "600"] });
+const inter = Poppins({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
