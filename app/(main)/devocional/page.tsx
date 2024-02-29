@@ -9,6 +9,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import Link from "next/link";
 import jesus from "@/public/JesusIcons/jesus.png";
 import sheep from "@/public/JesusIcons/sheep.png";
+import audio from "@/public/audio.png";
 import { MdAudiotrack } from "react-icons/md";
 function page() {
   const [textToSpeak, setTextToSpeak] = useState(`
@@ -29,8 +30,11 @@ function page() {
     Lembre-se, Jesus é como um grande amigo que está sempre por perto, mesmo quando não conseguimos vê-Lo. Ele te ama muito!
   `);
 
+  const [isAudio, setIsAudio] = useState(false);
+
   const handleSpeak = () => {
     const synth = window.speechSynthesis;
+    setIsAudio(true);
 
     if (synth.speaking) {
       synth.cancel();
@@ -39,19 +43,33 @@ function page() {
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.lang = "pt-BR";
     synth.speak(utterance);
+
+    if (!synth.speaking) {
+      setIsAudio(false);
+    }
   };
 
   return (
     <div className="text-black  px-8 text-sm">
       <div>
-        <MdAudiotrack
-          size={24}
-          className="absolute end-4"
-          onClick={handleSpeak}
-        />
-        <h2 className="text-center font-bold text-xl mb-4 text-orange-600 font-serif">
-          Jesus, o seu melhor amigo!
-        </h2>
+        <div className="flex items-center gap-4 mb-4">
+          <h2 className="text-center font-bold text-xl  text-orange-600 font-serif relative">
+            Jesus, o seu melhor amigo!
+          </h2>
+          {isAudio ? (
+            <Image src={audio} alt="audio" onClick={handleSpeak} />
+          ) : (
+            <Image
+              src={audio}
+              alt="audio"
+              onClick={() => {
+                synth.cancel();
+                setIsAudio(false);
+              }}
+            />
+          )}
+        </div>
+
         <div className="flex  justify-center">
           <Image src={jesus} alt="jesus" className="h-8 w-8" />
           <Image src={sheep} alt="sheep" className="h-6 w-6 mt-2" />
