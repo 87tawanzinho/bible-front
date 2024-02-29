@@ -12,28 +12,16 @@ import sheep from "@/public/JesusIcons/sheep.png";
 import audio from "@/public/audio.png";
 import { MdAudiotrack } from "react-icons/md";
 function page() {
-  const [textToSpeak, setTextToSpeak] = useState(`
-    Jesus, o seu melhor amigo!
-
-    Para se tornar amigo(a) de Jesus, você pode fazer algumas coisas simples:
-
-    1. Converse com Ele: Fale com Jesus como se fosse um amigo. Diga para Ele sobre o seu dia, suas alegrias e até mesmo as coisas que te deixam triste. Ele sempre estará ouvindo!
-
-    2. Agradeça: Diga "obrigada" a Jesus por coisas boas que acontecem na sua vida, como brincar com amigos, ter uma família carinhosa, ou até mesmo por um dia bonito.
-
-    3. Peça Ajuda: Se precisar de ajuda ou se sentir triste, você pode pedir para Jesus te ajudar. Ele sempre está pronto para cuidar de você.
-
-    4. Cante Músicas Felizes: Você pode cantar músicas alegres sobre Jesus. Isso faz com que Ele sinta o quanto você O ama.
-
-    5. Leia Histórias da Bíblia: Pergunte aos seus pais ou responsáveis para ler histórias da Bíblia com você. Assim, você vai conhecendo mais sobre Jesus e os amigos especiais que Ele teve.
-
-    Lembre-se, Jesus é como um grande amigo que está sempre por perto, mesmo quando não conseguimos vê-Lo. Ele te ama muito!
-  `);
+  const [textToSpeak, setTextToSpeak] = useState("");
   const [isAudio, setIsAudio] = useState(false);
 
   const handleSpeak = () => {
     setIsAudio(true);
     const synth = window.speechSynthesis;
+
+    if (synth.speaking) {
+      synth.cancel();
+    }
 
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.lang = "pt-BR";
@@ -69,6 +57,12 @@ function page() {
               src={audio}
               alt="audio"
               className="absolute end-2 bottom-2"
+              onClick={() => {
+                setTextToSpeak(` 1:Converse com Ele: Fale com Jesus como se fosse um amigo. Conte
+                para Ele sobre o seu dia, suas alegrias e até mesmo as coisas que
+                te deixam triste. Ele sempre estará ouvindo!`);
+                handleSpeak();
+              }}
             />
           </div>
 
@@ -82,6 +76,12 @@ function page() {
               src={audio}
               alt="audio"
               className="absolute end-2 bottom-2"
+              onClick={() => {
+                setTextToSpeak(`2:Agradeça: Diga "obrigada(o)" a Jesus por coisas boas que
+                acontecem na sua vida, como brincar com amigos, ter uma família
+                carinhosa, ou até mesmo por um dia bonito.`);
+                handleSpeak();
+              }}
             />
           </div>
 
