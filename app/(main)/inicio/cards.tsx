@@ -13,25 +13,25 @@ function CardsHome() {
       <OneCard
         bg="bg-blue-100"
         img={jesusAndClouds}
-        title="Tempinho com Deus"
+        title="Conhecer Jesus"
         optionalClassForText="text-[14px]"
       />
       <OneCard
         bg="bg-orange-100"
         img={jesusAndBeach}
-        title="Quadrinhos de Jesus"
+        title="---"
         optionalClassForText="text-[14px]"
       />
       <OneCard
         bg="bg-green-100"
         img={jesusAndSheep}
-        title="Ensinamentos sobre Cristo"
+        title="---"
         optionalClassForText="text-[14px]"
       />
       <OneCard
         bg="bg-red-100"
         img={camel}
-        title="Cristo e Jesus rei das"
+        title="---"
         optionalClassForText="text-[14px]"
       />
     </div>
@@ -72,7 +72,7 @@ export function OneCard({
         <Image
           src={img}
           alt="img"
-          className={`rounded-xl ${optionalClassForImage}`}
+          className={`rounded-xl ${optionalClassForImage}  hover:cursor-pointer hover:lg:scale-75 transition-all`}
         />
         {buttonGo && (
           <button className="bg-sky-800  text-white  px-4  mt-2 rounded text-sm">

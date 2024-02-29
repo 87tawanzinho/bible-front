@@ -14,10 +14,6 @@ function page() {
       <CardsHome />
 
       <Card_with_citation_square />
-
-      <div className="mt-10 text-xl">
-        <Title_and_arrowDown title="Anotações" span="" underline={false} />
-      </div>
     </div>
   );
 }

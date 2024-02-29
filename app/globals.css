@@ -42,6 +42,11 @@ body {
   cursor: pointer;
 }
 
+button:hover {
+  opacity: 75%;
+  transition: all;
+}
+
 @media (max-width: 1200px) {
   .scale:hover {
     transform: scale(1);
