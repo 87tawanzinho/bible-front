@@ -11,6 +11,10 @@ function page() {
       <h2 className="text-center underline lg:text-start text-2xl lg:text-4xl pb-12  ">
         Ensinamentos sobre Jesus
       </h2>
+
+      <div className="flex items-center gap-2 font-serif px-2">
+        <h2>Comece por aqui</h2>
+      </div>
       <CardsHome />
 
       <Card_with_citation_square />

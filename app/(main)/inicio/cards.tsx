@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import jesusAndClouds from "@/public/Jesus/JesusAndClouds.png";
 import camel from "@/public/Jesus/Camel.png";
-import jesusAndSheep from "@/public/Jesus/JesusAndSheep.png";
-import jesusAndBeach from "@/public/Jesus/JesusAndBeach.png";
+import jesusAndSheep from "@/public/JesusFirst/JesusNormalFirstCard/JesusAndYourSheeps.png";
+import jesusAndBeach from "@/public/JesusFirst/JesusNormalFirstCard/UnderstandWordsGod.png";
 import { MdArrowRightAlt } from "react-icons/md";
 function CardsHome() {
   return (
@@ -13,28 +13,19 @@ function CardsHome() {
       <OneCard
         bg="bg-blue-100"
         img={jesusAndClouds}
-        title="Me tornando amigo de Jesus
-        "
         optionalClassForText="text-[12px]"
       />
       <OneCard
         bg="bg-orange-100"
         img={jesusAndBeach}
-        title="---"
         optionalClassForText="text-[14px]"
       />
       <OneCard
         bg="bg-green-100"
         img={jesusAndSheep}
-        title="---"
         optionalClassForText="text-[14px]"
       />
-      <OneCard
-        bg="bg-red-100"
-        img={camel}
-        title="---"
-        optionalClassForText="text-[14px]"
-      />
+      <OneCard bg="bg-red-100" img={camel} optionalClassForText="text-[14px]" />
     </div>
   );
 }
@@ -47,16 +38,14 @@ export function OneCard({
   optionalClassForText,
   optionalClassForDivImage,
   optionalClassForImage,
-  buttonGo,
 }: {
   bg: string;
   img: any;
-  title: string;
+  title?: string;
   optionalClassForDiv?: string;
   optionalClassForText?: string;
   optionalClassForDivImage?: string;
   optionalClassForImage?: string;
-  buttonGo?: boolean;
 }) {
   const router = useRouter();
   return (
@@ -75,11 +64,6 @@ export function OneCard({
           alt="img"
           className={`rounded-xl ${optionalClassForImage}  hover:cursor-pointer hover:lg:scale-75 transition-all`}
         />
-        {buttonGo && (
-          <button className="bg-sky-800  text-white  px-4  mt-2 rounded text-sm">
-            <MdArrowRightAlt size={24} />
-          </button>
-        )}
       </div>
     </div>
   );

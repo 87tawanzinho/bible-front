@@ -11,6 +11,7 @@ import jesus from "@/public/JesusIcons/jesus.png";
 import sheep from "@/public/JesusIcons/sheep.png";
 import audio from "@/public/audio.png";
 import { MdAudiotrack } from "react-icons/md";
+import { BsArrowDown } from "react-icons/bs";
 function page() {
   const [textToSpeak, setTextToSpeak] = useState("");
   const [isAudio, setIsAudio] = useState(false);
@@ -122,13 +123,11 @@ function page() {
               className="absolute end-2 bottom-2"
             />
           </div>
-
-          <p className="">
-            Lembre-se, Jesus é como um grande amigo que está sempre por perto,
-            mesmo quando não conseguimos vê-Lo. Ele te ama muito!
-          </p>
         </div>
       </div>
+      <button className="flex justify-center bg-emerald-300 rounded p-2 w-7/12 lg:w-64">
+        Entendi
+      </button>
     </div>
   );
 }

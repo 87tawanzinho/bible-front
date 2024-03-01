@@ -24,6 +24,7 @@ function page() {
       const token = `Token ${response.data.token}`;
       localStorage.setItem("token", token);
       setWarning("😊");
+      console.log(response.data);
       router.push("/inicio");
     } catch (error) {
       setWarning("algo de errado aconteceu.");
