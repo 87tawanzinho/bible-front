@@ -8,7 +8,7 @@ import ChaptersText from "../components/chaptersText";
 
 function page() {
   return (
-    <div className="">
+    <div className="mt-8">
       <div className="text-center  lg:text-start text-2xl lg:text-4xl pb-12  ">
         <h2 className="">Ensinamentos sobre Jesus</h2>
         <h4 className="text-[12px] text-gray-600">
