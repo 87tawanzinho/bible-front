@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import jesusBanner from "@/public/Shres ar.png";
 
-import TitleAndLesson from "../components/titleAndLesson";
+import TitleAndLesson from "../../../components/titleAndLesson";
 import Image from "next/image";
-import ImageBanner from "../components/ImageBanner";
-import TextIntrodution from "../components/textIntrodution";
-import TextIntrodutionModel1 from "../components/textIntrodution";
-import Topic from "../components/topic";
+import ImageBanner from "../../../components/ImageBanner";
+import TextIntrodution from "../../../components/textIntrodution";
+import TextIntrodutionModel1 from "../../../components/textIntrodution";
+import Topic from "../../../components/topic";
+import Link from "next/link";
 function page() {
   const [textToSpeak, setTextToSpeak] = useState("");
   const [isAudio, setIsAudio] = useState(false);
@@ -66,13 +67,15 @@ function page() {
       />
 
       <div className="flex items-center mt-10 gap-4 ">
-        <button className=" px-4 py-2 bg-sky-950 rounded text-white ">
+        <button className=" px-4 py-2 bg-emerald-600 rounded text-white ">
           Entendi!
         </button>
 
-        <button className="px-4 py-2 bg-red-950 text-white rounded">
-          Voltar
-        </button>
+        <Link href={"/inicio"}>
+          <button className="px-4 py-2 bg-red-600 text-white rounded">
+            Voltar
+          </button>
+        </Link>
       </div>
     </div>
   );

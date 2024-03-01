@@ -1,10 +1,7 @@
 import React from "react";
-import CardsHome from "./cards";
-import { FaChevronDown, FaSortDown } from "react-icons/fa";
-import Title_and_arrowDown from "../components/title_and_arrowDown";
-import { BsArrowDown } from "react-icons/bs";
 import Card_with_citation_square from "../components/card_with_citation_square";
 import ChaptersText from "../components/chaptersText";
+import CardsChapter1 from "./cards";
 
 function page() {
   return (
@@ -16,7 +13,7 @@ function page() {
         </h4>
       </div>
       <ChaptersText cap="1" total="4" />
-      <CardsHome />
+      <CardsChapter1 />
 
       <Card_with_citation_square />
     </div>
