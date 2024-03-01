@@ -10,8 +10,8 @@ function page() {
   return (
     <div className="">
       <div className="text-center  lg:text-start text-2xl lg:text-4xl pb-12  ">
-        <h2 className="underline">Ensinamentos sobre Jesus</h2>
-        <h4 className="text-[12px]">
+        <h2 className="">Ensinamentos sobre Jesus</h2>
+        <h4 className="text-[12px] text-gray-600">
           Comece a caminhar com <span className="font-bold">Deus</span>.
         </h4>
       </div>
