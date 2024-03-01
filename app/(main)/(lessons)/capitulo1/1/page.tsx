@@ -3,33 +3,12 @@ import React, { useState } from "react";
 import jesusBanner from "@/public/Shres ar.png";
 
 import TitleAndLesson from "../../../components/titleAndLesson";
-import Image from "next/image";
 import ImageBanner from "../../../components/ImageBanner";
-import TextIntrodution from "../../../components/textIntrodution";
 import TextIntrodutionModel1 from "../../../components/textIntrodution";
 import Topic from "../../../components/topic";
 import Link from "next/link";
+import { axiosToggleCompleted } from "../../ToggleCompleted";
 function page() {
-  const [textToSpeak, setTextToSpeak] = useState("");
-  const [isAudio, setIsAudio] = useState(false);
-
-  const handleSpeak = () => {
-    setIsAudio(true);
-    const synth = window.speechSynthesis;
-
-    if (synth.speaking) {
-      synth.cancel();
-    }
-
-    const utterance = new SpeechSynthesisUtterance(textToSpeak);
-    utterance.lang = "pt-BR";
-    synth.speak(utterance);
-
-    if (!synth.speaking) {
-      setIsAudio(false);
-    }
-  };
-
   return (
     <div className="border p-4">
       <TitleAndLesson title="Como ser um amigo de Jesus?" lesson="1" cap="1" />
@@ -67,7 +46,10 @@ function page() {
       />
 
       <div className="flex items-center mt-10 gap-4 ">
-        <button className=" px-4 py-2 bg-emerald-600 rounded text-white ">
+        <button
+          className=" px-4 py-2 bg-emerald-600 rounded text-white "
+          onClick={() => axiosToggleCompleted("firstChapter", 1)}
+        >
           Entendi!
         </button>
 
