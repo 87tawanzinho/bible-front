@@ -29,7 +29,12 @@ function CardsChapter1() {
   }, []);
 
   const isCompleted = (chapter: any, number: number) => {
-    return cardsData && cardsData[chapter][number].completed === true;
+    return (
+      cardsData &&
+      cardsData[chapter] &&
+      cardsData[chapter][number] &&
+      cardsData[chapter][number].completed === true
+    );
   };
   return (
     <>
@@ -42,22 +47,22 @@ function CardsChapter1() {
             completed={isCompleted("firstChapter", 0)}
           />
           <OneCard
-            img={
-              cardsData
-                ? cardsData.firstChapter[1].completed === true
-                  ? jesusAndBeachCompleted
-                  : jesusAndBeach
-                : jesusAndBeach
-            }
+            img={jesusAndBeach}
             optionalClassForText="text-[14px]"
             src="/capitulo1/2"
+            completed={isCompleted("firstChapter", 1)}
           />
           <OneCard
             img={jesusAndSheep}
             optionalClassForText="text-[14px]"
             src="/capitulo1/3"
+            completed={isCompleted("firstChapter", 2)}
           />
-          <OneCard img={camel} optionalClassForText="text-[14px]" />
+          <OneCard
+            img={camel}
+            optionalClassForText="text-[14px]"
+            completed={isCompleted("firstChapter", 3)}
+          />
         </div>
       ) : (
         <p className="mt-10 text-2xl text-blue-900">Carregando..</p>
