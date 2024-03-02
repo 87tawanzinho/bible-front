@@ -1,4 +1,5 @@
 "use client";
+import { instanceWithAuthorization } from "@/app/instance";
 import React, { createContext, useContext, useState } from "react";
 
 interface CardsContextProps {
@@ -18,6 +19,18 @@ export const useCardsContext = (): CardsContextProps => {
 
 function CardsDataProvider({ children }: { children: React.ReactNode }) {
   const [cardsData, setCardsData] = useState<any>();
+
+  const AxiosTakeCards = async () => {
+    const { cardsData, setCardsData } = useCardsContext();
+
+    try {
+      const response = await instanceWithAuthorization.get("take_cards/");
+
+      setCardsData(response.data.allChapters);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   return (
     <CardsContext.Provider value={{ cardsData, setCardsData }}>
