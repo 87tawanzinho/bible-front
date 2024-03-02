@@ -35,30 +35,18 @@ function CardsChapter1() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    // Este bloco será executado sempre que cardsData for alterado
-
-    if (cardsData && cardsData.firstChapter) {
-      console.log(cardsData.firstChapter[0]);
-    }
-  }, [cardsData]); // Passando cardsData como dependência
-
+  const isCompleted = (chapter: any, number: number) => {
+    return cardsData && cardsData[chapter][number].completed === true;
+  };
   return (
     <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
       <OneCard
-        bg="bg-blue-100"
-        img={
-          cardsData
-            ? cardsData.firstChapter[0].completed === true
-              ? jesusAndCloudsCompleted
-              : jesusAndClouds
-            : jesusAndClouds
-        }
+        img={jesusAndClouds}
         optionalClassForText="text-[12px]"
         src="/capitulo1/1"
+        completed={isCompleted("firstChapter", 0)}
       />
       <OneCard
-        bg="bg-orange-100"
         img={
           cardsData
             ? cardsData.firstChapter[1].completed === true
@@ -70,18 +58,16 @@ function CardsChapter1() {
         src="/capitulo1/2"
       />
       <OneCard
-        bg="bg-green-100"
         img={jesusAndSheep}
         optionalClassForText="text-[14px]"
         src="/capitulo1/3"
       />
-      <OneCard bg="bg-red-100" img={camel} optionalClassForText="text-[14px]" />
+      <OneCard img={camel} optionalClassForText="text-[14px]" />
     </div>
   );
 }
 
 export function OneCard({
-  bg,
   img,
   title,
   optionalClassForDiv,
@@ -89,8 +75,8 @@ export function OneCard({
   optionalClassForDivImage,
   optionalClassForImage,
   src,
+  completed,
 }: {
-  bg: string;
   img: any;
   title?: string;
   optionalClassForDiv?: string;
@@ -98,6 +84,7 @@ export function OneCard({
   optionalClassForDivImage?: string;
   optionalClassForImage?: string;
   src?: string;
+  completed?: boolean;
 }) {
   const router = useRouter();
   return (
@@ -109,16 +96,29 @@ export function OneCard({
     >
       <p className={`mb-2  text-black ${optionalClassForText}`}>{title}</p>
       <div
-        className={` w-28 md:w-40 lg:w-48 ${bg} rounded-xl  ${optionalClassForDivImage}`}
+        className={` w-28 md:w-40 lg:w-48  rounded-xl  ${optionalClassForDivImage}`}
       >
-        <Image
-          src={img}
-          alt="img"
-          className={`rounded-xl ${optionalClassForImage}  hover:cursor-pointer hover:lg:scale-75 transition-all`}
-        />
+        <div className="relative">
+          <Image
+            src={img}
+            alt="img"
+            className={`rounded-xl ${optionalClassForImage}  hover:cursor-pointer   transition-all ${
+              completed && "sepia"
+            }`}
+          />
+          {completed && (
+            <button className="  rounded-lg absolute top-4 end-3 p-1 text-[12px] bg-emerald-950 text-white">
+              Completado
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
 export default CardsChapter1;
+
+interface chapter {
+  firstChapter: string;
+}

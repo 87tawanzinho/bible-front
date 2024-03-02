@@ -8,7 +8,9 @@ import TextIntrodutionModel1 from "../../../components/textIntrodution";
 import Topic from "../../../components/topic";
 import Link from "next/link";
 import { axiosToggleCompleted } from "../../ToggleCompleted";
+import { useRouter } from "next/navigation";
 function page() {
+  const router = useRouter();
   return (
     <div className="border p-4">
       <TitleAndLesson title="Como ser um amigo de Jesus?" lesson="1" cap="1" />
@@ -48,7 +50,15 @@ function page() {
       <div className="flex items-center mt-10 gap-4 ">
         <button
           className=" px-4 py-2 bg-emerald-600 rounded text-white "
-          onClick={() => axiosToggleCompleted("firstChapter", 1)}
+          onClick={() => {
+            try {
+              axiosToggleCompleted("firstChapter", 1);
+
+              router.push("/inicio");
+            } catch (error) {
+              console.log(error);
+            }
+          }}
         >
           Entendi!
         </button>
