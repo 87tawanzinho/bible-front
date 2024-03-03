@@ -9,6 +9,7 @@ import Topic from "../../../components/topic";
 import Link from "next/link";
 import { axiosToggleCompleted } from "../../ToggleCompleted";
 import { useRouter } from "next/navigation";
+import Button from "../../button";
 function page() {
   const router = useRouter();
   return (
@@ -45,20 +46,7 @@ function page() {
       <TextIntrodutionModel1 text="A história de Davi e Golias nos ensina que, não importa quão grandes sejam os desafios, Deus está sempre ao nosso lado. Tenha coragem, confiança e fé, pois Deus é o nosso poderoso aliado. Ele te ama muito!" />
 
       <div className="flex items-center mt-10 gap-4 ">
-        <button
-          className=" px-4 py-2 bg-emerald-600 rounded text-white "
-          onClick={() => {
-            try {
-              axiosToggleCompleted("firstChapter", 4);
-
-              router.push("/inicio");
-            } catch (error) {
-              console.log(error);
-            }
-          }}
-        >
-          Entendi!
-        </button>
+        <Button n={4} />
 
         <Link href={"/inicio"}>
           <button className="px-4 py-2 bg-red-600 text-white rounded">

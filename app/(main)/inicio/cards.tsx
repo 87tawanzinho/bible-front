@@ -16,17 +16,7 @@ function CardsChapter1() {
   const { cardsData, setCardsData } = useCardsContext();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await instanceWithAuthorization.get("take_cards/");
-
-        setCardsData(response.data.allChapters);
-      } catch (error) {
-        console.error("Erro ao buscar os dados:", error);
-      }
-    };
-
-    fetchData();
+    fetchCards(setCardsData);
   }, []);
 
   const isCompleted = (chapter: any, number: number) => {
@@ -78,3 +68,13 @@ export default CardsChapter1;
 interface chapter {
   firstChapter: string;
 }
+
+export const fetchCards = async (setCardsData: any) => {
+  try {
+    const response = await instanceWithAuthorization.get("take_cards/");
+
+    setCardsData(response.data.allChapters);
+  } catch (error) {
+    console.error("Erro ao buscar os dados:", error);
+  }
+};

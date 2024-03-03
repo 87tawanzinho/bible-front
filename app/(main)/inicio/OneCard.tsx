@@ -33,25 +33,16 @@ export default function OneCard({
     >
       <p className={`mb-2  text-black ${optionalClassForText}`}>{title}</p>
       <div
-        className={` w-28 md:w-40 lg:w-48  rounded-xl  ${optionalClassForDivImage}`}
+        className={` w-28 md:w-40 lg:w-40  rounded-xl  ${optionalClassForDivImage}`}
       >
-        <div className="relative">
+        <div>
           <Image
             src={img}
             alt="img"
-            className={`rounded-xl ${optionalClassForImage}  hover:cursor-pointer   transition-all ${
-              completed && "filtering"
+            className={`rounded-xl ${optionalClassForImage} hover:cursor-pointer transition-all ${
+              completed && "sepia-[40%] contrast-75"
             }`}
           />
-          {completed ? (
-            <button className="   w-full mt-2 rounded-2xl p-1 text-[13px] bg-emerald-600 text-white">
-              Completo
-            </button>
-          ) : (
-            <button className="   w-full mt-2 rounded-2xl p-1 text-[13px] bg-red-600 text-white">
-              Incompleto
-            </button>
-          )}
         </div>
       </div>
     </div>
