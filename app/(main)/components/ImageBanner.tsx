@@ -6,7 +6,7 @@ function ImageBanner({ src }: { src: StaticImageData }) {
     <Image
       src={src}
       alt="JESUS"
-      className="rounded-lg mt-10 lg:h-96 object-cover object-center"
+      className="rounded-3xl p-2 border border-gray-100 mt-10 lg:h-96 object-contain object-center "
     />
   );
 }

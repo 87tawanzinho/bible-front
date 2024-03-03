@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import jesusBanner from "@/public/Shres ar.png";
+import jesusBanner from "@/public/cap1banner/cap1l2.png";
 
 import TitleAndLesson from "../../../components/titleAndLesson";
 import ImageBanner from "../../../components/ImageBanner";
