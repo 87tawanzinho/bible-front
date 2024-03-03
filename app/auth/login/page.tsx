@@ -27,7 +27,7 @@ function page() {
     }
   };
   return (
-    <div className="bg-gradient-to-r from-sky-50 to-sky-100 flex flex-col justify-center items-center h-screen bg-login">
+    <div className="bg-gradient-to-r from-[#f7fffe] to-[#f4fcff] flex flex-col justify-center items-center h-screen bg-login">
       <form
         onSubmit={(e) => {
           e.preventDefault();
