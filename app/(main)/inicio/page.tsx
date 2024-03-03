@@ -12,10 +12,15 @@ function page() {
           Comece a caminhar com <span className="font-bold">Deus</span>.
         </h4>
       </div>
-      <ChaptersText cap="1" total="4" />
-      <CardsChapter1 />
+
+      <div>
+        <ChaptersText cap="1" total="4" />
+        <CardsChapter1 />
+      </div>
 
       <Card_with_citation_square />
+
+      <div className="mt-10"></div>
     </div>
   );
 }
