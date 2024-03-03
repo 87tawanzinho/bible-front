@@ -55,7 +55,7 @@ function Navbar() {
           />
         )}
         {openMenu && (
-          <div className="absolute top-10 bg-sky-950 text-white z-50 end-0 p-2 w-60  gap-1 flex flex-col">
+          <div className="absolute top-11 bg-nav-mobile text-black border z-50 end-0 p-2 w-60  gap-1 flex flex-col">
             <Link href={"/inicio"}>
               <div className="flex items-center gap-2 border-b ">
                 <IoHomeOutline />
