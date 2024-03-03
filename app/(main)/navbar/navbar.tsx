@@ -1,10 +1,11 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CgMenuLeftAlt } from "react-icons/cg";
-import kissbird from "@/public/kiss-bid.png";
 import { PiBird } from "react-icons/pi";
+import { TbBible } from "react-icons/tb";
+import { IoHomeOutline } from "react-icons/io5";
+import { IoMdArrowDropleft } from "react-icons/io";
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -13,13 +14,23 @@ function Navbar() {
       <div className="flex items-center gap-1 lg:absolute start-7">
         <PiBird className="text-sky-800" size={24} />
       </div>
-      <div className="hidden lg:flex gap-2">
+      <div className="hidden lg:flex gap-2 items-center">
         <Link
-          href={"#"}
-          className="border bg-[#07819c] w-16 text-center text-white rounded p-1"
+          href={"/inicio"}
+          className=" w-auto text-center text-black rounded p-1 hover:opacity-75"
         >
-          <p>Início</p>
+          <h3 className="underline">Ensinamentos Biblicos</h3>
         </Link>
+
+        <h3
+          className="cursor-pointer hover:opacity-75"
+          onClick={() => {
+            localStorage.removeItem("token");
+            window.location.href = "/";
+          }}
+        >
+          Sair
+        </h3>
       </div>
       <div className="flex items-center gap-2 lg:hidden">
         <CgMenuLeftAlt
@@ -29,11 +40,31 @@ function Navbar() {
         />
 
         {openMenu && (
-          <div className="absolute top-12 bg-zinc-950 text-white z-50 end-0 p-2 w-48 text-center">
-            <p>Passaró</p>
-            <p>Passaró</p>
-            <p>Passaró</p>
-            <p>Passaró</p>
+          <div className="absolute top-11 bg-white text-black z-50 end-0 p-2 w-60 border gap-1 flex flex-col">
+            <Link href={"/"}>
+              <div className="flex items-center gap-2 border-b ">
+                <IoHomeOutline />
+                <p>Pagina Inicial</p>
+              </div>
+            </Link>
+
+            <Link href={"/inicio"}>
+              <div className="flex items-center gap-2 border-b">
+                <TbBible />
+                <p>Ensinamentos Biblicos</p>
+              </div>
+            </Link>
+
+            <div
+              className="flex items-center gap-2 border-b"
+              onClick={() => {
+                localStorage.removeItem("token");
+                window.location.href = "/";
+              }}
+            >
+              <IoMdArrowDropleft />
+              <p>Sair</p>
+            </div>
           </div>
         )}
       </div>

@@ -10,6 +10,7 @@ import jesusAndBeachCompleted from "@/public/JesusFirst/JesusCompletedFirstCard/
 import { instanceWithAuthorization } from "@/app/instance";
 import { useCardsContext } from "../context/cardsData";
 import OneCard from "./OneCard";
+import Loading from "../loading";
 
 function CardsChapter1() {
   const { cardsData, setCardsData } = useCardsContext();
@@ -65,7 +66,7 @@ function CardsChapter1() {
           />
         </div>
       ) : (
-        <p className="mt-10 text-2xl text-blue-900">Carregando..</p>
+        <Loading />
       )}
     </>
   );
