@@ -1,26 +1,20 @@
 import React from "react";
-import Card_with_citation_square from "../components/card_with_citation_square";
-import ChaptersText from "../components/chaptersText";
-import CardsChapter1 from "./cards";
-
+import OneCard from "../ensinamentos/OneCard";
+import Devotional from "@/public/cardsHome/1.png";
+import Teachings from "@/public/cardsHome/2.png";
+import Link from "next/link";
 function page() {
   return (
-    <div className="mt-8">
-      <div className="text-center  lg:text-start text-2xl border-l rounded lg:pl-2 lg:text-4xl pb-12  ">
-        <h2 className="">Ensinamentos sobre Jesus</h2>
-        <h4 className="text-[12px] text-gray-600">
-          Comece a caminhar com <span className="font-bold">Deus</span>.
-        </h4>
+    <div className="flex  flex-col items-center h-full mt-10">
+      <h2 className="text-2xl mt-10 text-black ">Meu Amigo Jesus</h2>
+      <div className="flex gap-4 mt-10 ">
+        <Link href={"/inicio"}>
+          <OneCard img={Devotional} border={true} />
+        </Link>
+        <Link href={"/ensinamentos"}>
+          <OneCard img={Teachings} border={true} />
+        </Link>
       </div>
-
-      <div>
-        <ChaptersText cap="1" total="4" />
-        <CardsChapter1 />
-      </div>
-
-      <Card_with_citation_square />
-
-      <div className="mt-10"></div>
     </div>
   );
 }

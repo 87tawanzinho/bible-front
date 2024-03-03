@@ -4,7 +4,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 function Card_with_citation_square() {
   return (
-    <div className="p-4 text-sm bg-gradient-to-r bg-sky-950 shadow-sm text-white rounded-xl mt-10 w-full lg:w-7/12 relative flex flex-col items-center lg:items-start ">
+    <div className="p-4 text-sm bg-gradient-to-r bg-slate-900 shadow-sm text-white rounded-xl mt-10 w-full lg:w-7/12 relative flex flex-col items-center lg:items-start ">
       <div className="flex items-center text-gray-900 font-bold gap-2 p-2 bg-white rounded-lg ">
         <p>Mensagem Diária</p>
       </div>

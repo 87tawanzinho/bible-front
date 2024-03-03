@@ -11,7 +11,7 @@ import { BiDonateHeart } from "react-icons/bi";
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <nav className="border-b   text-white bg-sky-950  flex p-2 lg:p-4  justify-between lg:justify-end px-4 lg:px-24 items-center gap-4">
+    <nav className="border-b   text-white bg-slate-900  flex p-2 lg:p-4  justify-between lg:justify-end px-4 lg:px-24 items-center gap-4">
       <div className="flex items-center gap-1 lg:absolute start-7">
         <PiBird className="text-white" size={24} />
       </div>
@@ -56,14 +56,14 @@ function Navbar() {
         )}
         {openMenu && (
           <div className="absolute top-10 bg-sky-950 text-white z-50 end-0 p-2 w-60  gap-1 flex flex-col">
-            <Link href={"/"}>
+            <Link href={"/inicio"}>
               <div className="flex items-center gap-2 border-b ">
                 <IoHomeOutline />
                 <p>Pagina Inicial</p>
               </div>
             </Link>
 
-            <Link href={"/inicio"}>
+            <Link href={"/ensinamentos"}>
               <div className="flex items-center gap-2 border-b">
                 <TbBible />
                 <p>Ensinamentos Biblicos</p>

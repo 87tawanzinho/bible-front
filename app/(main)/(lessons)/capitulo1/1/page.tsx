@@ -49,7 +49,7 @@ function page() {
       <div className="flex items-center mt-10 gap-4 ">
         <Button n={1} />
 
-        <Link href={"/inicio"}>
+        <Link href={"/ensinamentos"}>
           <button className="px-4 py-2 bg-red-600 text-white rounded">
             Voltar
           </button>

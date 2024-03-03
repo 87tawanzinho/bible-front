@@ -16,6 +16,7 @@ export default function OneCard({
   optionalClassForImage,
   src,
   completed,
+  border,
 }: {
   img: any;
   title?: string;
@@ -25,6 +26,7 @@ export default function OneCard({
   optionalClassForImage?: string;
   src?: string;
   completed?: boolean;
+  border?: boolean;
 }) {
   const router = useRouter();
   const { cardsData, setCardsData } = useCardsContext();
@@ -43,9 +45,9 @@ export default function OneCard({
           <Image
             src={img}
             alt="img"
-            className={`rounded-xl ${optionalClassForImage} hover:cursor-pointer transition-all ${
-              completed && "sepia-[40%] contrast-75"
-            }`}
+            className={`rounded-xl ${optionalClassForImage} hover:cursor-pointer ${
+              border && "border-2 border-slate-900 "
+            } transition-all ${completed && "sepia-[40%] contrast-75"}`}
           />
 
           {completed && <GiCampingTent className="mt-4" size={24} />}

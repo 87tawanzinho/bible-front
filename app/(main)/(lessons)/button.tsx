@@ -2,7 +2,7 @@ import React from "react";
 import { axiosToggleCompleted } from "./ToggleCompleted";
 import { useRouter } from "next/navigation";
 import { useCardsContext } from "../context/cardsData";
-import { fetchCards } from "../inicio/cards";
+import { fetchCards } from "../ensinamentos/cards";
 
 function Button({ n }: { n: number }) {
   const { cardsData, setCardsData } = useCardsContext();
@@ -15,7 +15,7 @@ function Button({ n }: { n: number }) {
         try {
           axiosToggleCompleted("firstChapter", n);
           setCardsData(null);
-          router.push("/inicio");
+          router.push("/ensinamentos");
         } catch (error) {
           console.log(error);
         }
