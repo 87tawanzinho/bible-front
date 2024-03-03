@@ -43,9 +43,13 @@ export default function OneCard({
               completed && "filtering"
             }`}
           />
-          {completed && (
-            <button className="   w-full mt-2 rounded-lg p-1 text-[12px] bg-sky-950 text-gray-200">
-              🪴
+          {completed ? (
+            <button className="   w-full mt-2 rounded-lg p-2 text-[13px] bg-emerald-600 text-gray-200">
+              Completo
+            </button>
+          ) : (
+            <button className="   w-full mt-2 rounded-lg p-2 text-[13px] bg-red-600 text-gray-200">
+              Incompleto
             </button>
           )}
         </div>
