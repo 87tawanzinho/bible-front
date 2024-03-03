@@ -40,12 +40,12 @@ export default function OneCard({
             src={img}
             alt="img"
             className={`rounded-xl ${optionalClassForImage}  hover:cursor-pointer   transition-all ${
-              completed && "sepia"
+              completed && "filtering"
             }`}
           />
           {completed && (
-            <button className="  rounded-lg absolute top-4 end-3 p-1 text-[12px] bg-emerald-950 text-white">
-              Completado
+            <button className="   w-full mt-2 rounded-lg p-1 text-[12px] bg-sky-950 text-gray-200">
+              🪴
             </button>
           )}
         </div>

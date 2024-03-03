@@ -61,6 +61,7 @@ function CardsChapter1() {
           />
           <OneCard
             img={camel}
+            src="/capitulo1/4"
             optionalClassForText="text-[14px]"
             completed={isCompleted("firstChapter", 3)}
           />
