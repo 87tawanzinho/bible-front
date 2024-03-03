@@ -11,21 +11,21 @@ import { BiDonateHeart } from "react-icons/bi";
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <nav className="border-b   text-gray-800  flex p-2 justify-between lg:justify-end px-4 lg:px-24 items-center gap-4">
+    <nav className="border-b   text-white bg-sky-950  flex p-2 lg:p-4  justify-between lg:justify-end px-4 lg:px-24 items-center gap-4">
       <div className="flex items-center gap-1 lg:absolute start-7">
-        <PiBird className="text-sky-800" size={24} />
+        <PiBird className="text-white" size={24} />
       </div>
       <div className="hidden lg:flex gap-2 items-center">
         <Link
           href={"/inicio"}
-          className=" w-auto text-center text-black rounded p-1 hover:opacity-75"
+          className=" w-auto text-center  rounded p-1 hover:opacity-75"
         >
           <h3 className="underline">Ensinamentos Biblicos</h3>
         </Link>
 
         <Link
           href={"/inicio"}
-          className=" w-auto text-center text-black rounded p-1 hover:opacity-75"
+          className=" w-auto text-center  rounded p-1 hover:opacity-75"
         >
           <h3 className="">Contribuir</h3>
         </Link>
@@ -40,22 +40,22 @@ function Navbar() {
           Sair
         </h3>
       </div>
-      <div className="flex items-center gap-2 lg:hidden">
+      <div className="flex items-center gap-2 lg:hidden ">
         {openMenu ? (
           <IoMdClose
             size={26}
-            className="text-sky-800"
+            className="text-white"
             onClick={() => setOpenMenu(!openMenu)}
           />
         ) : (
           <CgMenuLeftAlt
             size={26}
-            className="text-sky-800"
+            className="text-white"
             onClick={() => setOpenMenu(!openMenu)}
           />
         )}
         {openMenu && (
-          <div className="absolute top-11 bg-white text-black z-50 end-0 p-2 w-60 border gap-1 flex flex-col">
+          <div className="absolute top-10 bg-sky-950 text-white z-50 end-0 p-2 w-60  gap-1 flex flex-col">
             <Link href={"/"}>
               <div className="flex items-center gap-2 border-b ">
                 <IoHomeOutline />

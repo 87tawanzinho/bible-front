@@ -2,6 +2,10 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCardsContext } from "../context/cardsData";
+import { FcCheckmark } from "react-icons/fc";
+import { TbBible } from "react-icons/tb";
+import { BiSolidBible } from "react-icons/bi";
+import { GiCampingTent } from "react-icons/gi";
 
 export default function OneCard({
   img,
@@ -26,7 +30,7 @@ export default function OneCard({
   const { cardsData, setCardsData } = useCardsContext();
   return (
     <div
-      className={`lg:overflow-hidden  ${optionalClassForDiv} border-b pb-2 rounded-lg `}
+      className={`lg:overflow-hidden  ${optionalClassForDiv}   rounded-lg `}
       onClick={() => {
         router.push(`${src}`);
       }}
@@ -35,7 +39,7 @@ export default function OneCard({
       <div
         className={` w-28 md:w-40 lg:w-40  rounded-xl  ${optionalClassForDivImage}`}
       >
-        <div>
+        <div className="flex flex-col justify-center items-center">
           <Image
             src={img}
             alt="img"
@@ -43,6 +47,8 @@ export default function OneCard({
               completed && "sepia-[40%] contrast-75"
             }`}
           />
+
+          {completed && <GiCampingTent className="mt-4" size={24} />}
         </div>
       </div>
     </div>
