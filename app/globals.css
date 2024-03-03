@@ -8,6 +8,7 @@ body {
   padding-bottom: 20px;
   background: #ffffff;
 }
+
 .text-gray {
   color: rgb(27, 27, 27);
 }
@@ -46,6 +47,13 @@ body {
 button:hover {
   opacity: 75%;
   transition: all;
+}
+
+@media (max-width: 530px) {
+  .bg-login {
+    background-image: url("../public/background/jesusBackgroundMobile.png");
+    background-size: cover;
+  }
 }
 
 .leap-frog {

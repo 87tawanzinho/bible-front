@@ -1,9 +1,7 @@
 "use client";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { jwtDecode } from "jwt-decode";
 import Image from "next/image";
-import bird from "@/public/kiss-bird.png";
+import bird from "@/public/kiss-bid.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { instanceWithoutAuthorization } from "@/app/instance";
@@ -29,13 +27,13 @@ function page() {
     }
   };
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen bg-login">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           axiosResponse();
         }}
-        className="flex flex-col border h-96  w-11/12 lg:w-[28rem] gap-2 relative justify-center mb-4 items-center"
+        className="flex flex-col h-96  w-11/12 lg:w-[28rem] gap-2 relative justify-center mb-4 items-center"
       >
         <Image src={bird} alt="bird" className="h-10 w-10 absolute top-12 " />
         {warning === "se conectando..." ? (
