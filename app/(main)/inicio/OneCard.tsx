@@ -26,7 +26,7 @@ export default function OneCard({
   const { cardsData, setCardsData } = useCardsContext();
   return (
     <div
-      className={`lg:overflow-hidden  ${optionalClassForDiv} `}
+      className={`lg:overflow-hidden  ${optionalClassForDiv} border-b pb-2 rounded-lg `}
       onClick={() => {
         router.push(`${src}`);
       }}
@@ -44,11 +44,11 @@ export default function OneCard({
             }`}
           />
           {completed ? (
-            <button className="   w-full mt-2 rounded-lg p-2 text-[13px] bg-emerald-600 text-gray-200">
+            <button className="   w-full mt-2 rounded-2xl p-1 text-[13px] bg-emerald-600 text-white">
               Completo
             </button>
           ) : (
-            <button className="   w-full mt-2 rounded-lg p-2 text-[13px] bg-red-600 text-gray-200">
+            <button className="   w-full mt-2 rounded-2xl p-1 text-[13px] bg-red-600 text-white">
               Incompleto
             </button>
           )}
