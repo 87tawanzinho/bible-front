@@ -43,13 +43,13 @@ function page() {
         textOne="Após vencer Golias, Davi expressou gratidão a Deus. Aprenda como a gratidão nos aproxima de Deus e como é importante reconhecer Sua ajuda em nossas vitórias."
       />
 
-      <TextIntrodutionModel1 text="A história de Davi e Golias nos ensina que, não importa quão grandes sejam os desafios, Deus está sempre ao nosso lado. Tenha coragem, confiança e fé, pois Deus é o nosso poderoso aliado. Ele te ama muito!" />
+      <TextIntrodutionModel1 text="A  história de Davi e Golias nos ensina que, não importa quão grandes sejam os desafios, Deus está sempre ao nosso lado. Tenha coragem, confiança e fé, pois Deus é o nosso poderoso aliado. Ele te ama muito!" />
 
       <div className="flex items-center mt-10 gap-4 ">
         <Button n={4} />
 
         <Link href={"/inicio"}>
-          <button className="px-4 py-2 bg-red-600 text-white rounded">
+          <button className="px-4 py-2 bg-red-600 text-white rounded s">
             Voltar
           </button>
         </Link>
