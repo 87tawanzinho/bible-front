@@ -8,17 +8,15 @@ import jesusAndSheep from "@/public/JesusFirst/JesusNormalFirstCard/JesusAndYour
 import jesusAndBeach from "@/public/JesusFirst/JesusNormalFirstCard/UnderstandWordsGod.png";
 import jesusAndBeachCompleted from "@/public/JesusFirst/JesusCompletedFirstCard/HowBeAFriendOfJesusCompleted.png";
 import { instanceWithAuthorization } from "@/app/instance";
-import { useCardsContext } from "../context/cardsData";
 import OneCard from "./OneCard";
 import Loading from "../loading";
+import { useCardsContext } from "../context/cardsData";
 
-function CardsChapter1() {
-  const { cardsData, setCardsData } = useCardsContext();
-
+function CardsChapter1({}) {
+  const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();
   useEffect(() => {
-    fetchCards(setCardsData);
+    AxiosTakeCards();
   }, []);
-
   const isCompleted = (chapter: any, number: number) => {
     return (
       cardsData &&
@@ -68,13 +66,3 @@ export default CardsChapter1;
 interface chapter {
   firstChapter: string;
 }
-
-export const fetchCards = async (setCardsData: any) => {
-  try {
-    const response = await instanceWithAuthorization.get("take_cards/");
-
-    setCardsData(response.data.allChapters);
-  } catch (error) {
-    console.error("Erro ao buscar os dados:", error);
-  }
-};

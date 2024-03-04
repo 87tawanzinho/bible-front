@@ -5,7 +5,7 @@ import { useCardsContext } from "../context/cardsData";
 import { fetchCards } from "../ensinamentos/cards";
 
 function Button({ n }: { n: number }) {
-  const { cardsData, setCardsData } = useCardsContext();
+  const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();
 
   const router = useRouter();
   return (
@@ -15,6 +15,7 @@ function Button({ n }: { n: number }) {
         try {
           axiosToggleCompleted("firstChapter", n);
           setCardsData(null);
+          AxiosTakeCards();
           router.push("/ensinamentos");
         } catch (error) {
           console.log(error);

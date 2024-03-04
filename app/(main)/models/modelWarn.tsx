@@ -1,6 +1,11 @@
+"use client";
 import React from "react";
+import { useCardsContext } from "../context/cardsData";
+import { useRouter } from "next/navigation";
 
 function ModelWarn({ isDevotional }: { isDevotional: boolean }) {
+  const { changeDevotional } = useCardsContext();
+  const router = useRouter();
   if (isDevotional) {
     return (
       <div className="absolute top-0 left-0 lg:flex lg:justify-center lg:items-center lg:h-screen lg:bg-black lg:bg-opacity-40 ">
@@ -17,7 +22,13 @@ function ModelWarn({ isDevotional }: { isDevotional: boolean }) {
             passar esse tempo maravilhoso contigo
           </h4>
           <div className="flex justify-center">
-            <button className="mt-10 bg-slate-900 text-white w-48  p-1 rounded-xl">
+            <button
+              className="mt-10 bg-slate-900 text-white w-48  p-1 rounded-xl"
+              onClick={() => {
+                changeDevotional();
+                router.push("/devocional");
+              }}
+            >
               Vamos lá!
             </button>
           </div>
