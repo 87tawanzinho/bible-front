@@ -49,8 +49,6 @@ export default function OneCard({
               border && "border-2 border-slate-900 "
             } transition-all ${completed && "sepia-[40%] contrast-75"}`}
           />
-
-          {completed && <GiCampingTent className="mt-4" size={24} />}
         </div>
       </div>
     </div>
