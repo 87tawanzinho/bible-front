@@ -13,7 +13,6 @@ function Button({ n }: { n: number }) {
       onClick={() => {
         try {
           axiosToggleCompleted("firstChapter", n);
-          setCardsData(null);
           AxiosTakeCards();
           router.push("/ensinamentos");
         } catch (error) {
