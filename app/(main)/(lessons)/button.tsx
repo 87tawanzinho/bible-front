@@ -2,7 +2,6 @@ import React from "react";
 import { axiosToggleCompleted } from "./ToggleCompleted";
 import { useRouter } from "next/navigation";
 import { useCardsContext } from "../context/cardsData";
-import { fetchCards } from "../ensinamentos/cards";
 
 function Button({ n }: { n: number }) {
   const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();
