@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useCardsContext } from "../context/cardsData";
 import Loading from "../loading";
 import Back from "../components/back";
+import { TbEyeSearch } from "react-icons/tb";
 
 function page() {
   const { takeDevotional, devotionalText } = useCardsContext();
@@ -45,13 +46,12 @@ function page() {
           </div>
 
           <div className="flex items-center justify-between mt-10">
-            <h3>O que você irá aprender?</h3>
-            <p
-              className="mt-1 font-bold cursor-pointer"
+            <h3 className="px-2">O que você irá aprender?</h3>
+
+            <TbEyeSearch
+              className=" font-bold cursor-pointer"
               onClick={handleFontSize}
-            >
-              +
-            </p>
+            />
           </div>
 
           <h3
@@ -60,7 +60,7 @@ function page() {
             {devotionalText.summary}
           </h3>
 
-          <p className="mt-10">Leitura</p>
+          <p className="mt-10 ">Leitura</p>
           <p
             className={` ${`text-${fontSize} `} max-h-[26rem] overflow-auto mt-4 border p-2 rounded  bg-yellow-50 leading-10 `}
           >
