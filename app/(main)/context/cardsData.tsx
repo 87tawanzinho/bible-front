@@ -1,5 +1,8 @@
 "use client";
-import { instanceWithAuthorization } from "@/app/instance";
+import {
+  instanceWithAuthorization,
+  instanceWithoutAuthorization,
+} from "@/app/instance";
 import React, { createContext, useContext, useState } from "react";
 
 interface CardsContextProps {
@@ -10,6 +13,8 @@ interface CardsContextProps {
   AxiosTakeCards: any;
   fetchProfile: any;
   changeDevotional: any;
+  devotionalText: any;
+  takeDevotional: any;
 }
 
 const CardsContext = createContext<CardsContextProps | undefined>(undefined);
@@ -25,6 +30,7 @@ export const useCardsContext = (): CardsContextProps => {
 function CardsDataProvider({ children }: { children: React.ReactNode }) {
   const [cardsData, setCardsData] = useState<any>();
   const [profileData, setProfileData] = useState<any>();
+  const [devotionalText, setDevotionalText] = useState<any>();
 
   const AxiosTakeCards = async () => {
     try {
@@ -50,10 +56,19 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
   const changeDevotional = async () => {
     try {
       const response = await instanceWithAuthorization.get("change_warn");
-      console.log(response);
+      console.log(response.data);
+      setDevotionalText(response.data);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const takeDevotional = async () => {
+    try {
+      const response = await instanceWithoutAuthorization.get("take_text");
+      console.log(response.data);
+      setDevotionalText(response.data);
+    } catch (error) {}
   };
 
   return (
@@ -66,6 +81,8 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
         AxiosTakeCards,
         fetchProfile,
         changeDevotional,
+        takeDevotional,
+        devotionalText,
       }}
     >
       {children}

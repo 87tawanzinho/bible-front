@@ -7,10 +7,11 @@ import Link from "next/link";
 import ModelWarn from "../models/modelWarn";
 import { useCardsContext } from "../context/cardsData";
 import Loading from "../loading";
+import { useRouter } from "next/navigation";
 function page() {
   const [warn, setWarn] = useState("");
   const { profileData, setProfileData, fetchProfile } = useCardsContext();
-
+  const router = useRouter();
   useEffect(() => {
     fetchProfile();
   }, []);
@@ -22,12 +23,10 @@ function page() {
           <h2 className="text-2xl mt-10 text-black ">Meu Amigo Jesus</h2>
           <div className="flex gap-4 mt-10 ">
             <Link
-              href={"/inicio"}
+              href={"/devocional"}
               onClick={() => {
                 if (!profileData.devotionalWarn) {
                   setWarn("devotional");
-                } else {
-                  null;
                 }
               }}
             >
