@@ -23,11 +23,13 @@ function page() {
               </h2>
             </div>
           </div>
-          <div className="flex items-center justify-between mt-6">
-            <h2>{devotionalText.title}</h2>
+          <div className="flex items-center justify-between mt-6 border-l px-1">
+            <h2 className="bg-yellow-200 text-black rounded-lg px-2">
+              Como salomão sobreviveu?
+            </h2>
             <p className="4">{devotionalText.version}</p>
           </div>
-          <p className="max-h-[24rem] overflow-auto mt-10 border p-2 rounded bg-slate-900 text-gray-200 leading-10 text-sm">
+          <p className="max-h-[26rem] overflow-auto mt-10 border p-2 rounded   leading-10 text-sm">
             O pastor e escultor Doug Merkey descreveu como os fios da sua vida
             se partiam como o desenrolar de uma corda: “Minha mãe tinha perdido
             sua batalha contra o câncer; um longo relacionamento romântico se
