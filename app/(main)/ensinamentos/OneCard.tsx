@@ -32,7 +32,7 @@ export default function OneCard({
   const { cardsData, setCardsData } = useCardsContext();
   return (
     <div
-      className={`lg:overflow-hidden  ${optionalClassForDiv}   rounded-lg `}
+      className={`lg:overflow-hidden  ${optionalClassForDiv}   rounded-lg lg:hover:scale-105 transition-all `}
       onClick={() => {
         router.push(`${src}`);
       }}
