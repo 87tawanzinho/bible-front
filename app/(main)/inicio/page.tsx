@@ -28,7 +28,7 @@ function page() {
           </h2>
           <div className="mt-8 ">
             <div className="flex items-center gap-2 text-sm ">
-              <Image src={caracol} alt="caracol" />
+              <Image src={caracol} alt="caracol" className="h-8 w-8" />
 
               <p className="mt-1 underline">6</p>
             </div>

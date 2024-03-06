@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { CgMenuLeftAlt } from "react-icons/cg";
-import { PiBird } from "react-icons/pi";
+import { PiBird, PiHandsPrayingFill } from "react-icons/pi";
 import { TbBible } from "react-icons/tb";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoMdArrowDropleft, IoMdClose } from "react-icons/io";
@@ -60,6 +60,13 @@ function Navbar() {
               <div className="flex items-center gap-2 border-b ">
                 <IoHomeOutline />
                 <p>Pagina Inicial</p>
+              </div>
+            </Link>
+
+            <Link href={"/devocional"}>
+              <div className="flex items-center gap-2 border-b">
+                <PiHandsPrayingFill />
+                <p>Devocional</p>
               </div>
             </Link>
 

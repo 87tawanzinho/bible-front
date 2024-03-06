@@ -22,7 +22,7 @@ function Button({ n }: { n: number }) {
       }}
     >
       <button className="bg-white border-2  flex items-center justify-center gap-2  lg:w-96 text-black rounded-lg  p-2 w-11/12 ">
-        +1 <Image src={caracol} alt="caracol" />
+        +1 <Image src={caracol} alt="caracol" className="h-8 w-8" />
       </button>
     </button>
   );

@@ -12,7 +12,7 @@ function AuthCheck({ children }: { children: React.ReactNode }) {
     const checkAuth = async () => {
       try {
         const response = await axios.get(
-          "https://bible-back.onrender.com/test_token",
+          "https://bible-back.vercel.app/test_token",
           {
             headers: {
               Authorization: localStorage.getItem("token"),
