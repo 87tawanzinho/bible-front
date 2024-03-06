@@ -2,14 +2,15 @@ import React from "react";
 import { axiosToggleCompleted } from "./ToggleCompleted";
 import { useRouter } from "next/navigation";
 import { useCardsContext } from "../context/cardsData";
-
+import caracol from "@/public/caracol.png";
+import Image from "next/image";
 function Button({ n }: { n: number }) {
   const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();
 
   const router = useRouter();
   return (
     <button
-      className=" px-4 py-2 bg-emerald-600 rounded text-white "
+      className=" mt-10 w-full flex justify-center lg:justify-start"
       onClick={() => {
         try {
           axiosToggleCompleted("firstChapter", n);
@@ -20,7 +21,9 @@ function Button({ n }: { n: number }) {
         }
       }}
     >
-      Entendi!
+      <button className="bg-white border-2  flex items-center justify-center gap-2  lg:w-96 text-black rounded-lg  p-2 w-11/12 ">
+        +1 <Image src={caracol} alt="caracol" />
+      </button>
     </button>
   );
 }
