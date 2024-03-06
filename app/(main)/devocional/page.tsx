@@ -28,7 +28,7 @@ function page() {
   return (
     <>
       {devotionalText ? (
-        <div>
+        <div className={""}>
           <Back className="" src={"/inicio"} size={20} />
           <div className={`flex items-center justify-between mt-4 border-b `}>
             <h2 className=" text-2xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-black ">
@@ -48,7 +48,7 @@ function page() {
           </div>
 
           <div className="flex items-center justify-between mt-10">
-            <h3 className="px-2">O que você irá aprender?</h3>
+            <h3 className="px-2">O que você irá aprender? </h3>
 
             <TbEyeSearch
               className=" font-bold cursor-pointer"
@@ -62,9 +62,20 @@ function page() {
             {devotionalText.summary}
           </h3>
 
-          <p className="mt-10 ">Leitura</p>
+          <p className="mt-10 ">
+            Leitura{" "}
+            {devotionalText.concluded_by.includes(
+              localStorage.getItem("username")
+            ) && "(completada)"}
+          </p>
           <p
-            className={` ${`text-${fontSize} `} max-h-[26rem] overflow-auto mt-4 border p-2 rounded  bg-yellow-50 leading-10 `}
+            className={` ${`text-${fontSize} `} ${
+              devotionalText.concluded_by.includes(
+                localStorage.getItem("username")
+              )
+                ? "bg-green-50"
+                : "bg-yellow-50"
+            } max-h-[26rem] overflow-auto mt-4 border p-2 rounded   leading-10 `}
           >
             {devotionalText.content}
           </p>
@@ -84,7 +95,7 @@ function page() {
             </div>
           ) : (
             <div className=" mt-10 w-full flex justify-center lg:justify-start ">
-              <button className="bg-green-200   text-gray-800  p-2 w-11/12 lg:w-auto">
+              <button className="bg-green-200   text-gray-800  p-2 w-11/12 lg:w-96">
                 Completado
               </button>
             </div>
