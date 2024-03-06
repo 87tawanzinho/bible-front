@@ -15,6 +15,7 @@ interface CardsContextProps {
   changeDevotional: any;
   devotionalText: any;
   takeDevotional: any;
+  readDevotionalText: any;
 }
 
 const CardsContext = createContext<CardsContextProps | undefined>(undefined);
@@ -47,7 +48,6 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
       const response = await instanceWithAuthorization.get("take_user_data/");
 
       setProfileData(response.data);
-      console.log(response);
     } catch (error) {
       console.error("Erro ao buscar os dados:", error);
     }
@@ -56,7 +56,7 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
   const changeDevotional = async () => {
     try {
       const response = await instanceWithAuthorization.get("change_warn");
-      console.log(response.data);
+
       setDevotionalText(response.data);
     } catch (error) {
       console.log(error);
@@ -66,8 +66,19 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
   const takeDevotional = async () => {
     try {
       const response = await instanceWithoutAuthorization.get("take_text");
-      console.log(response.data);
+
       setDevotionalText(response.data);
+    } catch (error) {}
+  };
+
+  const readDevotionalText = async (pk: number) => {
+    try {
+      const response = await instanceWithAuthorization.post(
+        `conclude_devotional/${pk}/`
+      );
+      takeDevotional();
+
+      console.log(response);
     } catch (error) {}
   };
 
@@ -83,6 +94,7 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
         changeDevotional,
         takeDevotional,
         devotionalText,
+        readDevotionalText,
       }}
     >
       {children}

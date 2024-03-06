@@ -7,7 +7,8 @@ import { TbEyeSearch } from "react-icons/tb";
 import caracol from "@/public/caracol.png";
 import Image from "next/image";
 function page() {
-  const { takeDevotional, devotionalText } = useCardsContext();
+  const { takeDevotional, devotionalText, readDevotionalText } =
+    useCardsContext();
   const [fontSize, setFontSize] = useState<string | null>("sm");
 
   const handleFontSize = () => {
@@ -68,14 +69,21 @@ function page() {
             {devotionalText.content}
           </p>
 
-          {devotionalText.concluded === false ? (
+          {!devotionalText.concluded_by.includes(
+            localStorage.getItem("username")
+          ) ? (
             <div className=" mt-10 w-full flex justify-center lg:justify-start">
-              <button className="bg-white border-2  flex items-center justify-center gap-2  lg:w-96 text-black rounded-lg  p-2 w-11/12 ">
+              <button
+                className="bg-white border-2  flex items-center justify-center gap-2  lg:w-96 text-black rounded-lg  p-2 w-11/12 "
+                onClick={() => {
+                  readDevotionalText(devotionalText.id);
+                }}
+              >
                 +1 <Image src={caracol} alt="caracol" className="h-8 w-8" />
               </button>
             </div>
           ) : (
-            <div className=" mt-10 w-full flex justify-center lg:justify-start">
+            <div className=" mt-10 w-full flex justify-center lg:justify-start ">
               <button className="bg-green-200   text-gray-800  p-2 w-11/12 lg:w-auto">
                 Completado
               </button>

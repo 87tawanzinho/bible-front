@@ -18,9 +18,11 @@ function page() {
         password: password,
       });
       const token = `Token ${response.data.token}`;
+      const username = response.data.user.user.username;
       localStorage.setItem("token", token);
+      localStorage.setItem("username", username);
       setWarning("😊");
-      console.log(response.data);
+
       router.push("/inicio");
     } catch (error) {
       setWarning("algo de errado aconteceu.");
