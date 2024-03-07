@@ -36,7 +36,7 @@ function page() {
 
           <div className="flex gap-4 mt-10 ">
             <Link
-              href={"/devocional"}
+              href={`${profileData.devotionalWarn ? "/devocional" : "/inicio"}`}
               onClick={() => {
                 if (!profileData.devotionalWarn) {
                   setWarn("devotional");
