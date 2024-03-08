@@ -6,10 +6,12 @@ import TitleAndLesson from "../../../components/titleAndLesson";
 import ImageBanner from "../../../components/ImageBanner";
 import TextIntrodutionModel1 from "../../../components/textIntrodution";
 import Topic from "../../../components/topic";
-import Link from "next/link";
-import { axiosToggleCompleted } from "../../ToggleCompleted";
 import Button from "../../button";
+import { useCardsContext } from "@/app/(main)/context/cardsData";
+import IsCompleted from "../../isCompleted";
 function page() {
+  const { cardsData } = useCardsContext();
+
   return (
     <div className="border p-4">
       <TitleAndLesson title="Como ser um amigo de Jesus?" lesson="1" cap="1" />
@@ -46,9 +48,7 @@ function page() {
         "
       />
 
-      <div className="flex items-center mt-10 gap-4 ">
-        <Button n={1} />
-      </div>
+      <IsCompleted n={1} index={0} />
     </div>
   );
 }

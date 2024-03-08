@@ -10,6 +10,7 @@ import Link from "next/link";
 import { axiosToggleCompleted } from "../../ToggleCompleted";
 import { useRouter } from "next/navigation";
 import Button from "../../button";
+import IsCompleted from "../../isCompleted";
 function page() {
   const router = useRouter();
   return (
@@ -45,9 +46,7 @@ function page() {
 
       <TextIntrodutionModel1 text="A  história de Davi e Golias nos ensina que, não importa quão grandes sejam os desafios, Deus está sempre ao nosso lado. Tenha coragem, confiança e fé, pois Deus é o nosso poderoso aliado. Ele te ama muito!" />
 
-      <div className="flex items-center mt-10 gap-4 ">
-        <Button n={4} />
-      </div>
+      <IsCompleted n={4} index={3} />
     </div>
   );
 }

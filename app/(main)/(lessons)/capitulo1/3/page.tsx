@@ -10,6 +10,7 @@ import Link from "next/link";
 import { axiosToggleCompleted } from "../../ToggleCompleted";
 import { useRouter } from "next/navigation";
 import Button from "../../button";
+import IsCompleted from "../../isCompleted";
 function page() {
   const router = useRouter();
   return (
@@ -45,9 +46,7 @@ function page() {
 
       <TextIntrodutionModel1 text="Lembre-se, a criação de Deus é uma expressão do Seu amor. Ao explorar e cuidar do mundo ao nosso redor, podemos nos aproximar mais dEle e aprender valiosas lições de vida. Deus te ama muito!" />
 
-      <div className="flex items-center mt-10 gap-4 ">
-        <Button n={3} />
-      </div>
+      <IsCompleted n={3} index={2} />
     </div>
   );
 }

@@ -10,6 +10,7 @@ import Link from "next/link";
 import { axiosToggleCompleted } from "../../ToggleCompleted";
 import { useRouter } from "next/navigation";
 import Button from "../../button";
+import IsCompleted from "../../isCompleted";
 function page() {
   const router = useRouter();
   return (
@@ -45,9 +46,7 @@ function page() {
 
       <TextIntrodutionModel1 text="Lembre-se, conhecer a Palavra de Deus nos aproxima Dele e nos ajuda a viver vidas cheias de amor e propósito. Deus te ama muito!" />
 
-      <div className="flex items-center mt-10 gap-4 ">
-        <Button n={2} />
-      </div>
+      <IsCompleted n={2} index={1} />
     </div>
   );
 }

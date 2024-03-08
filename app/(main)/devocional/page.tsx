@@ -44,7 +44,7 @@ function page() {
             <h2 className="bg-yellow-200 text-black rounded-lg px-2">
               {devotionalText.title}
             </h2>
-            <p className="italic font-bold">{devotionalText.version}</p>
+            <p className="italic font-bold ">{devotionalText.version}</p>
           </div>
 
           <div className="flex items-center justify-between mt-10">
@@ -57,25 +57,14 @@ function page() {
           </div>
 
           <h3
-            className={` overflow-auto mt-4 ${`text-${fontSize} `} border p-2 rounded  bg-green-50 leading-10  `}
+            className={` overflow-auto mt-4 ${`text-${fontSize} `} border p-2 rounded  bg-green-100 leading-10  `}
           >
             {devotionalText.summary}
           </h3>
 
-          <p className="mt-10 ">
-            Leitura{" "}
-            {devotionalText.concluded_by.includes(
-              localStorage.getItem("username")
-            ) && "(completada)"}
-          </p>
+          <p className="mt-10 ">Leitura</p>
           <p
-            className={` ${`text-${fontSize} `} ${
-              devotionalText.concluded_by.includes(
-                localStorage.getItem("username")
-              )
-                ? "bg-green-50"
-                : "bg-yellow-50"
-            } max-h-[26rem] overflow-auto mt-4 border p-2 rounded   leading-10 `}
+            className={` ${`text-${fontSize} `} ${"bg-yellow-100"} max-h-[26rem] overflow-auto mt-4 border p-2 rounded   leading-10 `}
           >
             {devotionalText.content}
           </p>

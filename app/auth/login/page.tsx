@@ -21,6 +21,7 @@ function page() {
       const username = response.data.user.user.username;
       localStorage.setItem("token", token);
       localStorage.setItem("username", username);
+      console.log(response.data);
       setWarning("😊");
 
       router.push("/inicio");
@@ -67,7 +68,7 @@ function page() {
                 {warning}
               </p>
             )}
-            <Link href={"$"} className="absolute bottom-16 left-4">
+            <Link href={"/auth/register"} className="absolute bottom-16 left-4">
               <p className="link-css">Não tenho uma conta..</p>
             </Link>
           </>

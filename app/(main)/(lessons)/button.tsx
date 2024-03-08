@@ -15,6 +15,7 @@ function Button({ n }: { n: number }) {
         try {
           axiosToggleCompleted("firstChapter", n);
           AxiosTakeCards();
+          console.log(cardsData);
           router.push("/ensinamentos");
         } catch (error) {
           console.log(error);
