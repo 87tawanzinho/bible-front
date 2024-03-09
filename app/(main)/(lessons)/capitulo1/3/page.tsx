@@ -11,10 +11,12 @@ import { axiosToggleCompleted } from "../../ToggleCompleted";
 import { useRouter } from "next/navigation";
 import Button from "../../button";
 import IsCompleted from "../../isCompleted";
+import Back from "@/app/(main)/components/back";
 function page() {
   const router = useRouter();
   return (
     <div className="border p-4">
+      <Back className="" size={20} src="/ensinamentos" />
       <TitleAndLesson title="A Criação de Deus" lesson="1" cap="1" />
       <ImageBanner src={jesusBanner} />
       <TextIntrodutionModel1 text="Vamos explorar juntos a incrível criação de Deus! Ele fez o mundo de maneira especial e maravilhosa. Aqui estão algumas maneiras de aprender mais sobre isso:" />

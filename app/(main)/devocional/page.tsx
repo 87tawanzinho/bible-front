@@ -6,6 +6,7 @@ import Back from "../components/back";
 import { TbEyeSearch } from "react-icons/tb";
 import caracol from "@/public/caracol.png";
 import Image from "next/image";
+import CompletedButton from "../components/completedButton";
 function page() {
   const { takeDevotional, devotionalText, readDevotionalText, loading } =
     useCardsContext();
@@ -92,9 +93,7 @@ function page() {
             </div>
           ) : (
             <div className=" mt-10 w-full flex justify-center lg:justify-start ">
-              <button className="bg-green-200   text-gray-800  p-2 w-11/12 lg:w-96">
-                Completado
-              </button>
+              <CompletedButton devocional={true} />
             </div>
           )}
         </div>

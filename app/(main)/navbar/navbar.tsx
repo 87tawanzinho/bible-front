@@ -40,7 +40,7 @@ function Navbar() {
         </Link>
 
         <Link
-          href={"/inicio"}
+          href={"/doar"}
           className=" w-auto text-center  rounded p-1 hover:opacity-75"
         >
           <h3 className="">Contribuir</h3>
@@ -93,7 +93,7 @@ function Navbar() {
               </div>
             </Link>
 
-            <Link href={"/inicio"}>
+            <Link href={"/doar"}>
               <div className="flex items-center gap-2 border-b">
                 <BiDonateHeart />
                 <p>Doar</p>

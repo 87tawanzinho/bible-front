@@ -11,10 +11,12 @@ import { axiosToggleCompleted } from "../../ToggleCompleted";
 import { useRouter } from "next/navigation";
 import Button from "../../button";
 import IsCompleted from "../../isCompleted";
+import Back from "@/app/(main)/components/back";
 function page() {
   const router = useRouter();
   return (
     <div className="border p-4">
+      <Back className="" size={20} src="/ensinamentos" />
       <TitleAndLesson title="A História de Davi e Golias" lesson="1" cap="1" />
       <ImageBanner src={jesusBanner} />
       <TextIntrodutionModel1 text="Prepare-se para uma emocionante aventura na história de Davi e Golias! Vamos aprender lições poderosas sobre coragem, fé e confiança em Deus:" />

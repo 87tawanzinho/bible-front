@@ -9,11 +9,13 @@ import Topic from "../../../components/topic";
 import Button from "../../button";
 import { useCardsContext } from "@/app/(main)/context/cardsData";
 import IsCompleted from "../../isCompleted";
+import Back from "@/app/(main)/components/back";
 function page() {
   const { cardsData } = useCardsContext();
 
   return (
     <div className="border p-4">
+      <Back className="" size={20} src="/ensinamentos" />
       <TitleAndLesson title="Como ser um amigo de Jesus?" lesson="1" cap="1" />
       <ImageBanner src={jesusBanner} />
       <TextIntrodutionModel1 text="Para se tornar amigo(a) de Jesus, você pode fazer algumas coisas simples:" />
