@@ -10,17 +10,15 @@ function Button({ n, index }: { n: number; index: number }) {
   const router = useRouter();
 
   return (
-    <button
+    <div
       className=" mt-10 w-full flex justify-center lg:justify-start"
       onClick={() => {
-        setLoading(true);
         try {
+          setLoading(true);
           axiosToggleCompleted("firstChapter", n);
           AxiosTakeCards();
         } catch (error) {
           console.log(error);
-        } finally {
-          setLoading(false);
         }
       }}
     >
@@ -34,7 +32,7 @@ function Button({ n, index }: { n: number; index: number }) {
           <div></div>
         </div>
       )}
-    </button>
+    </div>
   );
 }
 
