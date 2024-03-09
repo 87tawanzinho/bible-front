@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { axiosToggleCompleted } from "./ToggleCompleted";
 import { useRouter } from "next/navigation";
 import { useCardsContext } from "../context/cardsData";
@@ -9,13 +9,16 @@ function Button({ n, index }: { n: number; index: number }) {
     useCardsContext();
   const router = useRouter();
 
+  useEffect(() => {
+    setLoading(false);
+  }, [cardsData.firstChapter[index].completed === true]);
+
   return (
     <div
       className=" mt-10 w-full flex justify-center lg:justify-start"
       onClick={() => {
-        setLoading(false);
+        setLoading(true);
         try {
-          setLoading(true);
           axiosToggleCompleted("firstChapter", n);
           AxiosTakeCards();
         } catch (error) {
