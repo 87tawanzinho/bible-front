@@ -15,7 +15,7 @@ function page() {
   const router = useRouter();
 
   const axiosResponse = async () => {
-    setWarning("se conectando...");
+    setWarning("Quase lá...");
 
     if (confirmPassword !== password) {
       return setWarning("Senhas não coincidem");
