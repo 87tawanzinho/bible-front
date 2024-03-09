@@ -8,10 +8,12 @@ import { IoHomeOutline } from "react-icons/io5";
 import { IoMdArrowDropleft, IoMdClose } from "react-icons/io";
 import { BiDonateHeart } from "react-icons/bi";
 import { useCardsContext } from "../context/cardsData";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const { setProfileData } = useCardsContext();
+  const pathName = usePathname();
   return (
     <nav className="border-b   text-white bg-slate-900  flex p-2 lg:p-4  justify-between lg:justify-end px-4 lg:px-24 items-center gap-4">
       <div className="flex items-center gap-1 lg:absolute start-7">
@@ -20,28 +22,36 @@ function Navbar() {
       <div className="hidden lg:flex gap-2 items-center">
         <Link
           href={"/inicio"}
-          className=" w-auto text-center  rounded p-1 hover:opacity-75"
+          className={` ${
+            pathName === "/inicio" && "underline"
+          } w-auto text-center  rounded p-1 hover:opacity-75`}
         >
           <h3 className="">Início</h3>
         </Link>
 
         <Link
           href={"/devocional"}
-          className=" w-auto text-center  rounded p-1 hover:opacity-75"
+          className={` ${
+            pathName === "/devocional" && "underline"
+          } w-auto text-center  rounded p-1 hover:opacity-75`}
         >
           <h3 className="">Devocional Diário</h3>
         </Link>
 
         <Link
           href={"/ensinamentos"}
-          className=" w-auto text-center  rounded p-1 hover:opacity-75"
+          className={` ${
+            pathName === "/ensinamentos" && "underline"
+          } w-auto text-center  rounded p-1 hover:opacity-75`}
         >
           <h3 className="">Ensinamentos Biblicos</h3>
         </Link>
 
         <Link
           href={"/doar"}
-          className=" w-auto text-center  rounded p-1 hover:opacity-75"
+          className={` ${
+            pathName === "/doar" && "underline"
+          } w-auto text-center  rounded p-1 hover:opacity-75`}
         >
           <h3 className="">Contribuir</h3>
         </Link>

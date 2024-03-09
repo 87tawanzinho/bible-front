@@ -9,7 +9,7 @@ function CompletedButton({ devocional }: { devocional?: boolean }) {
         </button>
       </div>
       <p className="text-[12px] text-gray-400 mt-2 text-center sm:text-start ">
-        Você ganhou um chaveirinho por completar{" "}
+        Você ganhou uma conquista por completar{" "}
         {devocional ? "esse devocional" : "essa lição"}
       </p>
     </div>
