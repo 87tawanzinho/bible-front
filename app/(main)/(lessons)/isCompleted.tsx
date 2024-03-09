@@ -10,10 +10,15 @@ function IsCompleted({ n, index }: { n: number; index: number }) {
       {cardsData.firstChapter[index].completed === false ? (
         <Button n={n} />
       ) : (
-        <div className=" mt-10 w-full flex justify-center lg:justify-start ">
-          <button className="bg-green-200   text-gray-800  p-2 w-11/12 lg:w-96">
-            Completado
-          </button>
+        <div className="flex flex-col">
+          <div className=" mt-10 w-full flex justify-center lg:justify-start ">
+            <button className="bg-green-200   text-gray-800  p-2 w-11/12 lg:w-96">
+              Completado
+            </button>
+          </div>
+          <p className="text-[12px] text-gray-400 mt-2 text-center sm:text-start ">
+            Você ganhou um chaveirinho por completar essa lição
+          </p>
         </div>
       )}
     </div>

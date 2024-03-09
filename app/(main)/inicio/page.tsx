@@ -10,7 +10,6 @@ import Loading from "../loading";
 import { useRouter } from "next/navigation";
 import caracol from "@/public/caracol.png";
 import Image from "next/image";
-import { LuInfo } from "react-icons/lu";
 function page() {
   const [warn, setWarn] = useState("");
   const { profileData, setProfileData, fetchProfile } = useCardsContext();
@@ -31,7 +30,9 @@ function page() {
             <div className="flex items-center gap-2 text-sm ">
               <Image src={caracol} alt="caracol" className="h-8 w-8" />
 
-              <p className="mt-1 underline">{profileData.myBirds}</p>
+              <div>
+                <p>Meus Chaveirinhos</p>
+              </div>
             </div>
           </div>
 
