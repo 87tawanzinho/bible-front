@@ -56,7 +56,10 @@ function page() {
               className="input-p w-2/3"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" className="button-good w-32 mt-4">
+            <button
+              type="submit"
+              className="button-good bg-slate-900 w-32 mt-4"
+            >
               Entrar
             </button>
             {warning && (

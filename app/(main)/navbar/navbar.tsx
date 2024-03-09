@@ -7,9 +7,11 @@ import { TbBible } from "react-icons/tb";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoMdArrowDropleft, IoMdClose } from "react-icons/io";
 import { BiDonateHeart } from "react-icons/bi";
+import { useCardsContext } from "../context/cardsData";
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
+  const { setProfileData } = useCardsContext();
   return (
     <nav className="border-b   text-white bg-slate-900  flex p-2 lg:p-4  justify-between lg:justify-end px-4 lg:px-24 items-center gap-4">
       <div className="flex items-center gap-1 lg:absolute start-7">
@@ -20,7 +22,21 @@ function Navbar() {
           href={"/inicio"}
           className=" w-auto text-center  rounded p-1 hover:opacity-75"
         >
-          <h3 className="underline">Ensinamentos Biblicos</h3>
+          <h3 className="">Início</h3>
+        </Link>
+
+        <Link
+          href={"/devocional"}
+          className=" w-auto text-center  rounded p-1 hover:opacity-75"
+        >
+          <h3 className="">Devocional Diário</h3>
+        </Link>
+
+        <Link
+          href={"/ensinamentos"}
+          className=" w-auto text-center  rounded p-1 hover:opacity-75"
+        >
+          <h3 className="">Ensinamentos Biblicos</h3>
         </Link>
 
         <Link
@@ -88,6 +104,7 @@ function Navbar() {
               className="flex items-center gap-2 border-b"
               onClick={() => {
                 localStorage.removeItem("token");
+                setProfileData(null);
                 window.location.href = "/";
               }}
             >
