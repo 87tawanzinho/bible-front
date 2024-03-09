@@ -13,6 +13,7 @@ function Button({ n, index }: { n: number; index: number }) {
     <div
       className=" mt-10 w-full flex justify-center lg:justify-start"
       onClick={() => {
+        setLoading(false);
         try {
           setLoading(true);
           axiosToggleCompleted("firstChapter", n);
