@@ -69,7 +69,8 @@ function page() {
             {devotionalText.content}
           </p>
 
-          {!devotionalText.concluded_by.includes(
+          {devotionalText &&
+          !devotionalText.concluded_by.includes(
             localStorage.getItem("username")
           ) ? (
             <div className=" mt-10 w-full flex justify-center lg:justify-start">
