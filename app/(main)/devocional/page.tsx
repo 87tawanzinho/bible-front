@@ -25,6 +25,9 @@ function page() {
   useEffect(() => {
     takeDevotional();
   }, []);
+
+  const username =
+    typeof window !== "undefined" && localStorage.getItem("username");
   return (
     <>
       {devotionalText ? (
@@ -69,10 +72,7 @@ function page() {
             {devotionalText.content}
           </p>
 
-          {devotionalText &&
-          !devotionalText.concluded_by.includes(
-            localStorage.getItem("username")
-          ) ? (
+          {!devotionalText.concluded_by?.includes(username) ? (
             <div className=" mt-10 w-full flex justify-center lg:justify-start">
               <button
                 className="bg-white border-2  flex items-center justify-center gap-2  lg:w-96 text-black rounded-lg  p-2 w-11/12 "

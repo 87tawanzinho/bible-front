@@ -16,7 +16,9 @@ function page() {
 
   const router = useRouter();
   useEffect(() => {
-    fetchProfile();
+    if (localStorage.getItem("token")) {
+      fetchProfile();
+    }
   }, []);
 
   return (

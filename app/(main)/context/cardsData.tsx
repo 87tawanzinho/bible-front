@@ -16,6 +16,8 @@ interface CardsContextProps {
   devotionalText: any;
   takeDevotional: any;
   readDevotionalText: any;
+  loading: any;
+  setLoading: any;
 }
 
 const CardsContext = createContext<CardsContextProps | undefined>(undefined);
@@ -32,7 +34,7 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
   const [cardsData, setCardsData] = useState<any>();
   const [profileData, setProfileData] = useState<any>();
   const [devotionalText, setDevotionalText] = useState<any>();
-
+  const [loading, setLoading] = useState<any>(false);
   const AxiosTakeCards = async () => {
     try {
       const response = await instanceWithAuthorization.get("take_cards/");
@@ -95,6 +97,8 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
         takeDevotional,
         devotionalText,
         readDevotionalText,
+        loading,
+        setLoading,
       }}
     >
       {children}

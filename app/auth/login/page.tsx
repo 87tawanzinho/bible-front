@@ -5,6 +5,7 @@ import bird from "@/public/kiss-bid.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { instanceWithoutAuthorization } from "@/app/instance";
+import { useCardsContext } from "@/app/(main)/context/cardsData";
 function page() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -21,10 +22,9 @@ function page() {
       const username = response.data.user.user.username;
       localStorage.setItem("token", token);
       localStorage.setItem("username", username);
-      console.log(response.data);
       setWarning("😊");
 
-      router.push("/inicio");
+      window.location.href = "/inicio";
     } catch (error) {
       setWarning("algo de errado aconteceu.");
     }

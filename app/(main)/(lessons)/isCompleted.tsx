@@ -4,15 +4,20 @@ import { useCardsContext } from "../context/cardsData";
 import Button from "./button";
 
 function IsCompleted({ n, index }: { n: number; index: number }) {
-  const { AxiosTakeCards, cardsData } = useCardsContext();
+  const { AxiosTakeCards, cardsData, setLoading, loading } = useCardsContext();
 
   useEffect(() => {
     AxiosTakeCards();
   }, []);
+
+  if (cardsData && cardsData.firstChapter[index].completed === true) {
+    setLoading(false);
+  }
+
   return (
     <div className="flex items-center mt-10 gap-4 ">
       {cardsData && cardsData.firstChapter[index].completed === false ? (
-        <Button n={n} />
+        <Button n={n} index={index} />
       ) : (
         <div className="flex flex-col">
           <div className=" mt-10 w-full flex justify-center lg:justify-start ">

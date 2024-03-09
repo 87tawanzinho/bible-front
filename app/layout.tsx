@@ -8,6 +8,7 @@ import {
   Zilla_Slab,
 } from "next/font/google";
 import "./globals.css";
+import CardsDataProvider from "./(main)/context/cardsData";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -26,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <CardsDataProvider>
+        <body className={inter.className}>{children}</body>
+      </CardsDataProvider>
     </html>
   );
 }
