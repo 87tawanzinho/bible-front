@@ -74,18 +74,14 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
   };
 
   const readDevotionalText = async (pk: number) => {
-    setLoading(false);
     try {
       const response = await instanceWithAuthorization.post(
         `conclude_devotional/${pk}/`
       );
       takeDevotional();
-      setLoading(true);
+
       console.log(response);
-    } catch (error) {
-    } finally {
-      setLoading(false);
-    }
+    } catch (error) {}
   };
 
   return (

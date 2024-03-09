@@ -8,8 +8,13 @@ import caracol from "@/public/caracol.png";
 import Image from "next/image";
 import CompletedButton from "../components/completedButton";
 function page() {
-  const { takeDevotional, devotionalText, readDevotionalText, loading } =
-    useCardsContext();
+  const {
+    takeDevotional,
+    devotionalText,
+    readDevotionalText,
+    loading,
+    setLoading,
+  } = useCardsContext();
   const [fontSize, setFontSize] = useState<string | null>("sm");
 
   const handleFontSize = () => {
@@ -29,6 +34,11 @@ function page() {
 
   const username =
     typeof window !== "undefined" && localStorage.getItem("username");
+
+  useEffect(() => {
+    setLoading(false);
+  }, [devotionalText && devotionalText.concluded_by?.includes(username)]);
+
   return (
     <>
       {devotionalText ? (
@@ -79,6 +89,7 @@ function page() {
                 <button
                   className="bg-white border-2  flex items-center justify-center gap-2  lg:w-96 text-black rounded-lg  p-2 w-11/12 "
                   onClick={() => {
+                    setLoading(true);
                     readDevotionalText(devotionalText.id);
                   }}
                 >
@@ -87,7 +98,7 @@ function page() {
               ) : (
                 <div className="ld-ripple">
                   <div></div>
-                  <div>TODO</div>
+                  <div></div>
                 </div>
               )}
             </div>
