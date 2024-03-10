@@ -41,7 +41,7 @@ function page() {
 
   return (
     <>
-      {devotionalText.chapter ? (
+      {devotionalText && devotionalText.chapter ? (
         <div className={""}>
           <Back className="" src={"/inicio"} size={20} />
           <div className={`flex items-center justify-between mt-4 border-b `}>
