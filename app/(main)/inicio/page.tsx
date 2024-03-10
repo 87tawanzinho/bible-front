@@ -21,6 +21,9 @@ function page() {
     }
   }, []);
 
+  const username =
+    typeof window !== "undefined" && localStorage.getItem("username");
+
   return (
     <>
       {profileData ? (
@@ -28,6 +31,13 @@ function page() {
           <h2 className="text-2xl mt-10 text-zinc-800 lg:text-4xl">
             Meu amigo Jesus
           </h2>
+
+          <div className="border mt-4 rounded-lg px-2">
+            <div className="flex items-center gap-2">
+              <p>Olá, </p>
+              <p className="text-yellow-600">{username} </p>
+            </div>
+          </div>
 
           <div className="flex gap-4 mt-10 ">
             <Link

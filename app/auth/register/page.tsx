@@ -35,9 +35,16 @@ function page() {
         password: password,
       });
       router.push("/auth/login");
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
       setWarning("algo de errado aconteceu.");
+
+      if (
+        error.response.data.username[0] ===
+        "A user with that username already exists."
+      ) {
+        setWarning("Esse apelido já existe.");
+      }
     }
   };
   return (
