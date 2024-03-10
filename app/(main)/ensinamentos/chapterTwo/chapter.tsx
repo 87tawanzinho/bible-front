@@ -9,7 +9,7 @@ import jesusAndBeach from "@/public/JesusFirst/JesusNormalFirstCard/UnderstandWo
 import OneCard from "../OneCard";
 import { useCardsContext } from "../../context/cardsData";
 import Loading from "../../loading";
-import trin from "@/public/cap2/Trin.png";
+import trin from "@/public/cap2/trin.png";
 import two from "@/public/cap2/2.png";
 function CardsChapter2({}) {
   const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();
