@@ -13,10 +13,8 @@ function Button({ n, index }: { n: number; index: number }) {
     <div
       className=" mt-10 w-full flex justify-center lg:justify-start"
       onClick={() => {
-        cardsData(null);
         try {
           axiosToggleCompleted("firstChapter", n);
-
           AxiosTakeCards();
           router.push("/ensinamentos");
         } catch (error) {
