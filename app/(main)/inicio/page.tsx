@@ -50,11 +50,7 @@ function page() {
             >
               <OneCard img={Devotional} border={true} />
             </Link>
-            <img
-              src="https://img.freepik.com/vetores-premium/desenhos-animados-de-arca-de-noe_29190-73.jpg"
-              alt=""
-              className="absolute end-0 bottom-0   w-32  md:w-32 lg:w-60 "
-            />
+
             {warn && <ModelWarn isDevotional={warn == "devotional"} />}
 
             <Link href={"/ensinamentos"}>
