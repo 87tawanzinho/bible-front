@@ -9,20 +9,16 @@ function Button({ n, index }: { n: number; index: number }) {
     useCardsContext();
   const router = useRouter();
 
-  useEffect(() => {
-    AxiosTakeCards();
-  }, [loading]);
-  useEffect(() => {
-    setLoading(false);
-  }, [cardsData && cardsData.firstChapter[index].completed === true]);
-
   return (
     <div
       className=" mt-10 w-full flex justify-center lg:justify-start"
       onClick={() => {
-        setLoading(true);
+        cardsData(null);
         try {
           axiosToggleCompleted("firstChapter", n);
+
+          AxiosTakeCards();
+          router.push("/ensinamentos");
         } catch (error) {
           console.log(error);
         }

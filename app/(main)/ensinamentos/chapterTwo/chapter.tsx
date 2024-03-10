@@ -9,6 +9,7 @@ import jesusAndBeach from "@/public/JesusFirst/JesusNormalFirstCard/UnderstandWo
 import OneCard from "../OneCard";
 import { useCardsContext } from "../../context/cardsData";
 import Loading from "../../loading";
+import inserir from "@/public/Inserir um título.png";
 
 function CardsChapter2({}) {
   const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();
@@ -28,26 +29,25 @@ function CardsChapter2({}) {
       {cardsData ? (
         <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
           <OneCard
-            img={jesusAndClouds}
+            img={inserir}
             optionalClassForText="text-[12px]"
             src="/capitulo1/1"
             completed={isCompleted("firstChapter", 0)}
           />
           <OneCard
-            img={jesusAndBeach}
+            img={inserir}
             optionalClassForText="text-[14px]"
             src="/capitulo1/2"
             completed={isCompleted("firstChapter", 1)}
           />
           <OneCard
-            img={jesusAndSheep}
+            img={inserir}
             optionalClassForText="text-[14px]"
             src="/capitulo1/3"
             completed={isCompleted("firstChapter", 2)}
-            optionalClassForImage="h-32 object-cover"
           />
           <OneCard
-            img={camel}
+            img={inserir}
             src="/capitulo1/4"
             optionalClassForText="text-[14px]"
             completed={isCompleted("firstChapter", 3)}
