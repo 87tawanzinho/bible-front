@@ -27,7 +27,7 @@ function page() {
   return (
     <>
       {profileData ? (
-        <div className="flex  flex-col items-center h-full mt-10">
+        <div className="flex  flex-col items-center h-full lg:mt-10">
           <h2 className="text-2xl mt-10 text-zinc-800 lg:text-4xl">
             Meu amigo Jesus
           </h2>
