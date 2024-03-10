@@ -6,11 +6,9 @@ import jesusAndClouds from "@/public/Jesus/JesusAndClouds.png";
 import camel from "@/public/Jesus/Camel.png";
 import jesusAndSheep from "@/public/JesusFirst/JesusNormalFirstCard/JesusAndYourSheeps.png";
 import jesusAndBeach from "@/public/JesusFirst/JesusNormalFirstCard/UnderstandWordsGod.png";
-import jesusAndBeachCompleted from "@/public/JesusFirst/JesusCompletedFirstCard/HowBeAFriendOfJesusCompleted.png";
-import { instanceWithAuthorization } from "@/app/instance";
-import OneCard from "./OneCard";
-import Loading from "../loading";
-import { useCardsContext } from "../context/cardsData";
+import OneCard from "../OneCard";
+import { useCardsContext } from "../../context/cardsData";
+import Loading from "../../loading";
 
 function CardsChapter1({}) {
   const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();

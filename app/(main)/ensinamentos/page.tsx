@@ -1,8 +1,9 @@
 import React from "react";
 import Card_with_citation_square from "../components/card_with_citation_square";
 import ChaptersText from "../components/chaptersText";
-import CardsChapter1 from "./cards";
 import Back from "../components/back";
+import CardsChapter1 from "./chapterOne/chapter";
+import CardsChapter2 from "./chapterTwo/chapter";
 
 function page() {
   return (
@@ -16,11 +17,13 @@ function page() {
       </div>
 
       <div>
-        <ChaptersText cap="1" total="4" />
         <CardsChapter1 />
       </div>
 
       <Card_with_citation_square />
+      <div className="mt-10">
+        <CardsChapter2 />
+      </div>
 
       <div className="mt-10"></div>
     </div>
