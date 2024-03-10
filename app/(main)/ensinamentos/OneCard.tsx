@@ -17,6 +17,7 @@ export default function OneCard({
   src,
   completed,
   border,
+  isDifferentStory,
 }: {
   img: any;
   title?: string;
@@ -27,6 +28,7 @@ export default function OneCard({
   src?: string;
   completed?: boolean;
   border?: boolean;
+  isDifferentStory?: boolean;
 }) {
   const router = useRouter();
   const { cardsData, setCardsData } = useCardsContext();
@@ -39,14 +41,16 @@ export default function OneCard({
     >
       <p className={`mb-2  text-black ${optionalClassForText}`}>{title}</p>
       <div
-        className={` w-28 md:w-40 lg:w-40  rounded-xl  ${optionalClassForDivImage}`}
+        className={` ${
+          isDifferentStory ? "md:w-48" : "w-28 md:w-40 lg:w-40"
+        }  rounded-xl  ${optionalClassForDivImage}`}
       >
         <div className="flex flex-col justify-center items-center">
           <Image
             src={img}
             alt="img"
             className={`rounded-xl ${optionalClassForImage} hover:cursor-pointer ${
-              border && "border-2 border-slate-900 "
+              border && "border-2 border-slate-400 "
             } transition-all ${completed && "sepia-[40%] contrast-75"}`}
           />
         </div>

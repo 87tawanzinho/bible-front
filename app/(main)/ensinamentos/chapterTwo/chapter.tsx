@@ -9,48 +9,35 @@ import jesusAndBeach from "@/public/JesusFirst/JesusNormalFirstCard/UnderstandWo
 import OneCard from "../OneCard";
 import { useCardsContext } from "../../context/cardsData";
 import Loading from "../../loading";
-import inserir from "@/public/Inserir um título.png";
-
+import trin from "@/public/cap2/Trin.png";
+import two from "@/public/cap2/2.png";
 function CardsChapter2({}) {
   const { cardsData, setCardsData, AxiosTakeCards } = useCardsContext();
   useEffect(() => {
     AxiosTakeCards();
   }, []);
   const isCompleted = (chapter: any, number: number) => {
-    return (
-      cardsData &&
-      cardsData[chapter] &&
-      cardsData[chapter][number] &&
-      cardsData[chapter][number].completed === true
-    );
+    return false;
   };
   return (
     <>
       {cardsData ? (
         <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
           <OneCard
-            img={inserir}
+            img={trin}
             optionalClassForText="text-[12px]"
             src="/capitulo1/1"
+            border={true}
+            isDifferentStory={true}
             completed={isCompleted("firstChapter", 0)}
           />
           <OneCard
-            img={inserir}
+            img={two}
             optionalClassForText="text-[14px]"
+            border={true}
+            isDifferentStory={true}
             src="/capitulo1/2"
             completed={isCompleted("firstChapter", 1)}
-          />
-          <OneCard
-            img={inserir}
-            optionalClassForText="text-[14px]"
-            src="/capitulo1/3"
-            completed={isCompleted("firstChapter", 2)}
-          />
-          <OneCard
-            img={inserir}
-            src="/capitulo1/4"
-            optionalClassForText="text-[14px]"
-            completed={isCompleted("firstChapter", 3)}
           />
         </div>
       ) : (
