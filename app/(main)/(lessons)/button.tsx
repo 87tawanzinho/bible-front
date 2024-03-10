@@ -10,6 +10,9 @@ function Button({ n, index }: { n: number; index: number }) {
   const router = useRouter();
 
   useEffect(() => {
+    AxiosTakeCards();
+  }, []);
+  useEffect(() => {
     setLoading(false);
   }, [cardsData && cardsData.firstChapter[index].completed === true]);
 
