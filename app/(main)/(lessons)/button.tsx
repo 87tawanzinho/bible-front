@@ -11,7 +11,7 @@ function Button({ n, index }: { n: number; index: number }) {
 
   useEffect(() => {
     AxiosTakeCards();
-  }, []);
+  }, [loading]);
   useEffect(() => {
     setLoading(false);
   }, [cardsData && cardsData.firstChapter[index].completed === true]);
