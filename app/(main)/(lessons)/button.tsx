@@ -11,7 +11,7 @@ function Button({ n, index }: { n: number; index: number }) {
 
   useEffect(() => {
     setLoading(false);
-  }, [cardsData.firstChapter[index].completed === true]);
+  }, [cardsData && cardsData.firstChapter[index].completed === true]);
 
   return (
     <div
