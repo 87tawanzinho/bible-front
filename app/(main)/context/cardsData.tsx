@@ -16,6 +16,7 @@ interface CardsContextProps {
   devotionalText: any;
   takeDevotional: any;
   readDevotionalText: any;
+  axiosToggleCompleted: any;
   loading: any;
   setLoading: any;
 }
@@ -78,12 +79,25 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
       const response = await instanceWithAuthorization.post(
         `conclude_devotional/${pk}/`
       );
-      takeDevotional();
 
       console.log(response);
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      takeDevotional();
+    }
   };
 
+  const axiosToggleCompleted = async (chapter: string, id: number) => {
+    try {
+      const response = await instanceWithAuthorization.post(
+        `toggle_card/${chapter}/${id}/`
+      );
+    } catch (error) {
+      null;
+    } finally {
+      AxiosTakeCards();
+    }
+  };
   return (
     <CardsContext.Provider
       value={{
@@ -99,6 +113,7 @@ function CardsDataProvider({ children }: { children: React.ReactNode }) {
         readDevotionalText,
         loading,
         setLoading,
+        axiosToggleCompleted,
       }}
     >
       {children}

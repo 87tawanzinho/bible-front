@@ -39,10 +39,6 @@ function page() {
     setLoading(false);
   }, [devotionalText && devotionalText.concluded_by?.includes(username)]);
 
-  useEffect(() => {
-    takeDevotional();
-  }, [loading]);
-
   return (
     <>
       {devotionalText && devotionalText.chapter ? (

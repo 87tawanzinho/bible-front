@@ -10,10 +10,6 @@ function Button({ n, index }: { n: number; index: number }) {
   const router = useRouter();
 
   useEffect(() => {
-    AxiosTakeCards();
-  }, [loading]);
-
-  useEffect(() => {
     setLoading(false);
   }, [cardsData && cardsData.firstChapter[index].completed === true]);
 
@@ -24,7 +20,6 @@ function Button({ n, index }: { n: number; index: number }) {
         setLoading(true);
         try {
           axiosToggleCompleted("firstChapter", n);
-          AxiosTakeCards();
         } catch (error) {
           console.log(error);
         }
