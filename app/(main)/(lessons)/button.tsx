@@ -4,7 +4,15 @@ import { useRouter } from "next/navigation";
 import { useCardsContext } from "../context/cardsData";
 import caracol from "@/public/caracol.png";
 import Image from "next/image";
-function Button({ n, index }: { n: number; index: number }) {
+function Button({
+  n,
+  index,
+  chapter,
+}: {
+  n: number;
+  index: number;
+  chapter: string;
+}) {
   const { cardsData, setCardsData, AxiosTakeCards, loading, setLoading } =
     useCardsContext();
   const router = useRouter();
@@ -14,7 +22,7 @@ function Button({ n, index }: { n: number; index: number }) {
       className=" mt-10 w-full flex justify-center lg:justify-start"
       onClick={() => {
         try {
-          axiosToggleCompleted("firstChapter", n);
+          axiosToggleCompleted(chapter, n);
           AxiosTakeCards();
           router.push("/ensinamentos");
         } catch (error) {

@@ -7,10 +7,12 @@ import CompletedButton from "../components/completedButton";
 function IsCompleted({
   n,
   index,
+  chapter,
   cap,
 }: {
   n: number;
   index: number;
+  chapter: string;
   cap: string;
 }) {
   const { AxiosTakeCards, cardsData, setLoading, loading } = useCardsContext();
@@ -19,14 +21,14 @@ function IsCompleted({
     AxiosTakeCards();
   }, []);
 
-  if (cardsData && cardsData.firstChapter[index].completed === true) {
+  if (cardsData && cardsData[chapter][index].completed === true) {
     setLoading(false);
   }
 
   return (
     <div className="flex items-center mt-10 gap-4 ">
-      {cardsData && cardsData.firstChapter[index].completed === false ? (
-        <Button n={n} index={index} />
+      {cardsData && cardsData[chapter][index].completed === false ? (
+        <Button n={n} index={index} chapter={chapter} />
       ) : (
         <CompletedButton cap={cap} />
       )}

@@ -17,7 +17,12 @@ function CardsChapter2({}) {
     AxiosTakeCards();
   }, []);
   const isCompleted = (chapter: any, number: number) => {
-    return false;
+    return (
+      cardsData &&
+      cardsData[chapter] &&
+      cardsData[chapter][number] &&
+      cardsData[chapter][number].completed === true
+    );
   };
   return (
     <>
@@ -27,17 +32,15 @@ function CardsChapter2({}) {
             img={trin}
             optionalClassForText="text-[12px]"
             src="/capitulo2/1"
-            border={true}
             isDifferentStory={true}
-            completed={isCompleted("firstChapter", 0)}
+            completed={isCompleted("secondChapter", 0)}
           />
           <OneCard
-            img={two}
+            img={trin}
             optionalClassForText="text-[14px]"
-            border={true}
             isDifferentStory={true}
             src="/capitulo2/2"
-            completed={isCompleted("firstChapter", 1)}
+            completed={isCompleted("secondChapter", 1)}
           />
         </div>
       ) : (

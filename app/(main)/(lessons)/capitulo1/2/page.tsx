@@ -48,7 +48,7 @@ function page() {
 
       <TextIntrodutionModel1 text="Lembre-se, conhecer a Palavra de Deus nos aproxima Dele e nos ajuda a viver vidas cheias de amor e propósito. Deus te ama muito!" />
 
-      <IsCompleted n={2} index={1} cap="1" />
+      <IsCompleted n={2} index={1} cap="1" chapter="firstChapter" />
     </div>
   );
 }

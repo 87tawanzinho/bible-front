@@ -50,7 +50,7 @@ function page() {
         "
       />
 
-      <IsCompleted n={1} index={0} cap="1" />
+      <IsCompleted n={1} index={0} cap="1" chapter="firstChapter" />
     </div>
   );
 }

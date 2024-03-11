@@ -42,7 +42,7 @@ export default function OneCard({
       <p className={`mb-2  text-black ${optionalClassForText}`}>{title}</p>
       <div
         className={` ${
-          isDifferentStory ? "md:w-48" : "w-28 md:w-40 lg:w-40"
+          isDifferentStory ? "md:w-64" : "w-28 md:w-40 lg:w-40"
         }  rounded-xl  ${optionalClassForDivImage}`}
       >
         <div className="flex flex-col justify-center items-center">

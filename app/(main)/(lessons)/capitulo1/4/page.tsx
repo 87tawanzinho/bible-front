@@ -48,7 +48,7 @@ function page() {
 
       <TextIntrodutionModel1 text="A  história de Davi e Golias nos ensina que, não importa quão grandes sejam os desafios, Deus está sempre ao nosso lado. Tenha coragem, confiança e fé, pois Deus é o nosso poderoso aliado. Ele te ama muito!" />
 
-      <IsCompleted n={4} index={3} cap="1" />
+      <IsCompleted n={4} index={3} cap="1" chapter="firstChapter" />
     </div>
   );
 }
