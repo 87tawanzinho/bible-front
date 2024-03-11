@@ -26,7 +26,7 @@ function CardsChapter2({}) {
           <OneCard
             img={trin}
             optionalClassForText="text-[12px]"
-            src="/capitulo1/1"
+            src="/capitulo2/1"
             border={true}
             isDifferentStory={true}
             completed={isCompleted("firstChapter", 0)}
@@ -36,7 +36,7 @@ function CardsChapter2({}) {
             optionalClassForText="text-[14px]"
             border={true}
             isDifferentStory={true}
-            src="/capitulo1/2"
+            src="/capitulo2/2"
             completed={isCompleted("firstChapter", 1)}
           />
         </div>
