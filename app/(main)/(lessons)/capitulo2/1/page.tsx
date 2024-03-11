@@ -46,7 +46,7 @@ function page() {
         textOne="Para ser amigo da Trindade, é só conversar com Deus Papai, agradecer a Jesus e pedir ajuda ao Espírito Santo. Assim, você vai ter a amizade especial de Deus em todas as formas que Ele nos ama. Cada parte da Trindade tem uma história linda, e juntas elas formam a história mais incrível de amor que a gente já viu!"
       />
 
-      <IsCompleted n={1} index={0} />
+      <IsCompleted n={1} index={0} cap="2" />
     </div>
   );
 }

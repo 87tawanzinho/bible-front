@@ -4,7 +4,15 @@ import { useCardsContext } from "../context/cardsData";
 import Button from "./button";
 import CompletedButton from "../components/completedButton";
 
-function IsCompleted({ n, index }: { n: number; index: number }) {
+function IsCompleted({
+  n,
+  index,
+  cap,
+}: {
+  n: number;
+  index: number;
+  cap: string;
+}) {
   const { AxiosTakeCards, cardsData, setLoading, loading } = useCardsContext();
 
   useEffect(() => {
@@ -20,7 +28,7 @@ function IsCompleted({ n, index }: { n: number; index: number }) {
       {cardsData && cardsData.firstChapter[index].completed === false ? (
         <Button n={n} index={index} />
       ) : (
-        <CompletedButton />
+        <CompletedButton cap={cap} />
       )}
     </div>
   );

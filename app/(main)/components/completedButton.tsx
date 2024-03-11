@@ -1,10 +1,28 @@
 import React from "react";
 
-function CompletedButton({ devocional }: { devocional?: boolean }) {
+function CompletedButton({
+  devocional,
+  cap,
+}: {
+  devocional?: boolean;
+  cap?: string;
+}) {
+  const changeBg = () => {
+    if (cap === "1") {
+      return "bg-slate-900";
+    }
+    if (cap === "2") {
+      return "bg-red-900";
+    } else {
+      return "bg-emerald-900";
+    }
+  };
   return (
     <div className="flex flex-col">
       <div className=" mt-10 w-full flex justify-center lg:justify-start ">
-        <button className="bg-green-200   text-gray-800  p-2 w-11/12 lg:w-96">
+        <button
+          className={`${changeBg()}   text-gray-100  p-2 w-11/12 lg:w-96`}
+        >
           Completado
         </button>
       </div>

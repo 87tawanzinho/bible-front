@@ -12,7 +12,7 @@ function TitleAndLesson({
   return (
     <div>
       {" "}
-      <h2 className="text-xl lg:text-2xl text-center lg:text-start text-slate-900">
+      <h2 className="text-xl lg:text-2xl text-center lg:text-start text-black">
         {title}
       </h2>
       <div

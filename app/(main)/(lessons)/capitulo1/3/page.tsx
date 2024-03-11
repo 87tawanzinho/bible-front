@@ -48,7 +48,7 @@ function page() {
 
       <TextIntrodutionModel1 text="Lembre-se, a criação de Deus é uma expressão do Seu amor. Ao explorar e cuidar do mundo ao nosso redor, podemos nos aproximar mais dEle e aprender valiosas lições de vida. Deus te ama muito!" />
 
-      <IsCompleted n={3} index={2} />
+      <IsCompleted n={3} index={2} cap="1" />
     </div>
   );
 }
