@@ -24,38 +24,32 @@ function CardsChapter1({}) {
     );
   };
   return (
-    <>
-      {cardsData ? (
-        <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
-          <OneCard
-            img={jesusAndClouds}
-            optionalClassForText="text-[12px]"
-            src="/capitulo1/1"
-            completed={isCompleted("firstChapter", 0)}
-          />
-          <OneCard
-            img={jesusAndBeach}
-            optionalClassForText="text-[14px]"
-            src="/capitulo1/2"
-            completed={isCompleted("firstChapter", 1)}
-          />
-          <OneCard
-            img={jesusAndSheep}
-            optionalClassForText="text-[14px]"
-            src="/capitulo1/3"
-            completed={isCompleted("firstChapter", 2)}
-          />
-          <OneCard
-            img={camel}
-            src="/capitulo1/4"
-            optionalClassForText="text-[14px]"
-            completed={isCompleted("firstChapter", 3)}
-          />
-        </div>
-      ) : (
-        <Loading />
-      )}
-    </>
+    <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
+      <OneCard
+        img={jesusAndClouds}
+        optionalClassForText="text-[12px]"
+        src="/capitulo1/1"
+        completed={isCompleted("firstChapter", 0)}
+      />
+      <OneCard
+        img={jesusAndBeach}
+        optionalClassForText="text-[14px]"
+        src="/capitulo1/2"
+        completed={isCompleted("firstChapter", 1)}
+      />
+      <OneCard
+        img={jesusAndSheep}
+        optionalClassForText="text-[14px]"
+        src="/capitulo1/3"
+        completed={isCompleted("firstChapter", 2)}
+      />
+      <OneCard
+        img={camel}
+        src="/capitulo1/4"
+        optionalClassForText="text-[14px]"
+        completed={isCompleted("firstChapter", 3)}
+      />
+    </div>
   );
 }
 

@@ -25,28 +25,22 @@ function CardsChapter2({}) {
     );
   };
   return (
-    <>
-      {cardsData ? (
-        <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
-          <OneCard
-            img={trin}
-            optionalClassForText="text-[12px]"
-            src="/capitulo2/1"
-            isDifferentStory={true}
-            completed={isCompleted("secondChapter", 0)}
-          />
-          <OneCard
-            img={trin}
-            optionalClassForText="text-[14px]"
-            isDifferentStory={true}
-            src="/capitulo2/2"
-            completed={isCompleted("secondChapter", 1)}
-          />
-        </div>
-      ) : (
-        <Loading />
-      )}
-    </>
+    <div className="flex overflow-x-auto  gap-2 md:gap-4  lg:gap-8  p-0 lg:p-2  text-center  ">
+      <OneCard
+        img={trin}
+        optionalClassForText="text-[12px]"
+        src="/capitulo2/1"
+        isDifferentStory={true}
+        completed={isCompleted("secondChapter", 0)}
+      />
+      <OneCard
+        img={trin}
+        optionalClassForText="text-[14px]"
+        isDifferentStory={true}
+        src="/capitulo2/2"
+        completed={isCompleted("secondChapter", 1)}
+      />
+    </div>
   );
 }
 
