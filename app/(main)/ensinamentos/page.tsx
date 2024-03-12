@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Card_with_citation_square from "../components/card_with_citation_square";
 import ChaptersText from "../components/chaptersText";
 import Back from "../components/back";
@@ -9,7 +9,10 @@ import Loading from "../loading";
 import { useCardsContext } from "../context/cardsData";
 
 function page() {
-  const { cardsData } = useCardsContext();
+  const { cardsData, AxiosTakeCards } = useCardsContext();
+  useEffect(() => {
+    AxiosTakeCards();
+  }, []);
   return (
     <>
       {cardsData ? (
